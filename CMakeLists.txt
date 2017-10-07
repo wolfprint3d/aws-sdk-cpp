@@ -68,6 +68,18 @@ if(MINIMIZE_SIZE)
     set(ENABLE_UNITY_BUILD ON) # MINIMIZE_SIZE always implies UNITY_BUILD
 endif()
 
+
+
+#Add some multithreaded build support
+if(${CMAKE_GENERATOR} MATCHES "Unix Makefiles")
+	#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-unused-command-line-argument")
+	#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument")
+	set(BUILD_COMMAND "$(MAKE)")
+	#set(CMAKE_MAKE_PROGRAM "${CMAKE_MAKE_PROGRAM} -j8")
+	#message(STATUS "Parallel Unix Makefiles Build: ${CMAKE_MAKE_PROGRAM}")
+endif()
+
+
 set(PYTHON_CMD "python")
 
 # CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths 
