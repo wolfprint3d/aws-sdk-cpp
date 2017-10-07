@@ -19,7 +19,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
 
         set( ZLIB_INCLUDE_FLAGS "-isystem ${ZLIB_INCLUDE_DIR}" CACHE INTERNAL "compiler flags to find zlib includes")
         set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")
-
+		
         #zlib
         #based on http://stackoverflow.com/questions/16842218/how-to-use-cmake-externalproject-add-or-alternatives-in-a-cross-platform-way
         #likely, some of the things here are unnecessary
@@ -30,6 +30,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
             PATCH_COMMAND ""
             CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+			-DCMAKE_MAKE_PROGRAM=${CMAKE_MAKE_PROGRAM}
             -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
             -DANDROID_ABI=${ANDROID_ABI}
             -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME}
@@ -78,6 +79,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
             PATCH_COMMAND cd ${CMAKE_BINARY_DIR} && python ${AWS_NATIVE_SDK_ROOT}/android-build/configure_openssl_cmake.py --source ${AWS_NATIVE_SDK_ROOT} --dest ${OPENSSL_SOURCE_DIR}
             CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+			-DCMAKE_MAKE_PROGRAM=${CMAKE_MAKE_PROGRAM}
             -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
             -DANDROID_ABI=${ANDROID_ABI}
             -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME}
@@ -130,6 +132,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
                 CMAKE_ARGS
                 -C ${AWS_NATIVE_SDK_ROOT}/android-build/CurlAndroidCrossCompile.cmake
                 -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+				-DCMAKE_MAKE_PROGRAM=${CMAKE_MAKE_PROGRAM}
                 -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
                 -DANDROID_ABI=${ANDROID_ABI}
                 -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME}
