@@ -52,64 +52,50 @@ namespace Model
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
@@ -143,11 +129,11 @@ namespace Model
      * IOPS), amount of IOPS provisioned (if any), and the number of prior scale
      * storage operations. Typical migration times are under 24 hours, but the process
      * can take up to several days in some cases. During the migration, the DB instance
-     * will be available for use, but might experience performance degradation. While
-     * the migration takes place, nightly backups for the instance will be suspended.
-     * No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
+     * is available for use, but might experience performance degradation. While the
+     * migration takes place, nightly backups for the instance are suspended. No other
+     * Amazon RDS operations can take place for the instance, including modifying the
+     * instance, rebooting the instance, deleting the instance, creating a Read Replica
+     * for the instance, and creating a DB snapshot of the instance.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
@@ -180,11 +166,11 @@ namespace Model
      * IOPS), amount of IOPS provisioned (if any), and the number of prior scale
      * storage operations. Typical migration times are under 24 hours, but the process
      * can take up to several days in some cases. During the migration, the DB instance
-     * will be available for use, but might experience performance degradation. While
-     * the migration takes place, nightly backups for the instance will be suspended.
-     * No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
+     * is available for use, but might experience performance degradation. While the
+     * migration takes place, nightly backups for the instance are suspended. No other
+     * Amazon RDS operations can take place for the instance, including modifying the
+     * instance, rebooting the instance, deleting the instance, creating a Read Replica
+     * for the instance, and creating a DB snapshot of the instance.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
@@ -217,131 +203,110 @@ namespace Model
      * IOPS), amount of IOPS provisioned (if any), and the number of prior scale
      * storage operations. Typical migration times are under 24 hours, but the process
      * can take up to several days in some cases. During the migration, the DB instance
-     * will be available for use, but might experience performance degradation. While
-     * the migration takes place, nightly backups for the instance will be suspended.
-     * No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
+     * is available for use, but might experience performance degradation. While the
+     * migration takes place, nightly backups for the instance are suspended. No other
+     * Amazon RDS operations can take place for the instance, including modifying the
+     * instance, rebooting the instance, deleting the instance, creating a Read Replica
+     * for the instance, and creating a DB snapshot of the instance.</p>
      */
     inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -355,9 +320,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
@@ -370,9 +335,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
@@ -385,9 +350,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
@@ -400,9 +365,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
@@ -415,9 +380,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -430,9 +395,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
@@ -445,9 +410,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -455,80 +420,64 @@ namespace Model
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline void SetDBSecurityGroups(const Aws::Vector<Aws::String>& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline void SetDBSecurityGroups(Aws::Vector<Aws::String>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBSecurityGroups(const Aws::Vector<Aws::String>& value) { SetDBSecurityGroups(value); return *this;}
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBSecurityGroups(Aws::Vector<Aws::String>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddDBSecurityGroups(const Aws::String& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddDBSecurityGroups(Aws::String&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddDBSecurityGroups(const char* value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
@@ -538,10 +487,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
@@ -550,10 +497,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
@@ -562,10 +507,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
@@ -574,10 +517,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
@@ -586,10 +527,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
@@ -598,10 +537,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
@@ -610,10 +547,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
@@ -622,10 +557,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
@@ -636,13 +569,13 @@ namespace Model
      * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
-     * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
-     * next failure reboot. Review the table of parameters in <a
+     * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
+     * failure reboot. Review the table of parameters in <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the impact
      * that setting <code>ApplyImmediately</code> to <code>true</code> or
      * <code>false</code> has for each modified parameter and to determine when the
-     * changes will be applied. </p> <p>Default: <code>false</code> </p>
+     * changes are applied. </p> <p>Default: <code>false</code> </p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
@@ -652,13 +585,13 @@ namespace Model
      * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
-     * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
-     * next failure reboot. Review the table of parameters in <a
+     * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
+     * failure reboot. Review the table of parameters in <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the impact
      * that setting <code>ApplyImmediately</code> to <code>true</code> or
      * <code>false</code> has for each modified parameter and to determine when the
-     * changes will be applied. </p> <p>Default: <code>false</code> </p>
+     * changes are applied. </p> <p>Default: <code>false</code> </p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
@@ -668,13 +601,13 @@ namespace Model
      * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
-     * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
-     * next failure reboot. Review the table of parameters in <a
+     * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
+     * failure reboot. Review the table of parameters in <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the impact
      * that setting <code>ApplyImmediately</code> to <code>true</code> or
      * <code>false</code> has for each modified parameter and to determine when the
-     * changes will be applied. </p> <p>Default: <code>false</code> </p>
+     * changes are applied. </p> <p>Default: <code>false</code> </p>
      */
     inline ModifyDBInstanceRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
@@ -687,14 +620,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
@@ -706,14 +642,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
@@ -725,14 +664,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
@@ -744,14 +686,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
@@ -763,14 +708,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
@@ -782,14 +730,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
@@ -801,14 +752,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -1313,35 +1267,32 @@ namespace Model
 
 
     /**
-     * <p> Indicates that minor version upgrades will be applied automatically to the
-     * DB instance during the maintenance window. Changing this parameter does not
-     * result in an outage except in the following case and the change is
-     * asynchronously applied as soon as possible. An outage will result if this
-     * parameter is set to <code>true</code> during the maintenance window, and a newer
-     * minor version is available, and RDS has enabled auto patching for that engine
-     * version. </p>
+     * <p> Indicates that minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window. Changing this parameter does not result
+     * in an outage except in the following case and the change is asynchronously
+     * applied as soon as possible. An outage will result if this parameter is set to
+     * <code>true</code> during the maintenance window, and a newer minor version is
+     * available, and RDS has enabled auto patching for that engine version. </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p> Indicates that minor version upgrades will be applied automatically to the
-     * DB instance during the maintenance window. Changing this parameter does not
-     * result in an outage except in the following case and the change is
-     * asynchronously applied as soon as possible. An outage will result if this
-     * parameter is set to <code>true</code> during the maintenance window, and a newer
-     * minor version is available, and RDS has enabled auto patching for that engine
-     * version. </p>
+     * <p> Indicates that minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window. Changing this parameter does not result
+     * in an outage except in the following case and the change is asynchronously
+     * applied as soon as possible. An outage will result if this parameter is set to
+     * <code>true</code> during the maintenance window, and a newer minor version is
+     * available, and RDS has enabled auto patching for that engine version. </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p> Indicates that minor version upgrades will be applied automatically to the
-     * DB instance during the maintenance window. Changing this parameter does not
-     * result in an outage except in the following case and the change is
-     * asynchronously applied as soon as possible. An outage will result if this
-     * parameter is set to <code>true</code> during the maintenance window, and a newer
-     * minor version is available, and RDS has enabled auto patching for that engine
-     * version. </p>
+     * <p> Indicates that minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window. Changing this parameter does not result
+     * in an outage except in the following case and the change is asynchronously
+     * applied as soon as possible. An outage will result if this parameter is set to
+     * <code>true</code> during the maintenance window, and a newer minor version is
+     * available, and RDS has enabled auto patching for that engine version. </p>
      */
     inline ModifyDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -1415,12 +1366,12 @@ namespace Model
      * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
      * any), and the number of prior scale storage operations. Typical migration times
      * are under 24 hours, but the process can take up to several days in some cases.
-     * During the migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place, nightly
-     * backups for the instance will be suspended. No other Amazon RDS operations can
-     * take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
-     * creating a DB snapshot of the instance.</p>
+     * During the migration, the DB instance is available for use, but might experience
+     * performance degradation. While the migration takes place, nightly backups for
+     * the instance are suspended. No other Amazon RDS operations can take place for
+     * the instance, including modifying the instance, rebooting the instance, deleting
+     * the instance, creating a Read Replica for the instance, and creating a DB
+     * snapshot of the instance.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -1443,12 +1394,12 @@ namespace Model
      * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
      * any), and the number of prior scale storage operations. Typical migration times
      * are under 24 hours, but the process can take up to several days in some cases.
-     * During the migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place, nightly
-     * backups for the instance will be suspended. No other Amazon RDS operations can
-     * take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
-     * creating a DB snapshot of the instance.</p>
+     * During the migration, the DB instance is available for use, but might experience
+     * performance degradation. While the migration takes place, nightly backups for
+     * the instance are suspended. No other Amazon RDS operations can take place for
+     * the instance, including modifying the instance, rebooting the instance, deleting
+     * the instance, creating a Read Replica for the instance, and creating a DB
+     * snapshot of the instance.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -1471,12 +1422,12 @@ namespace Model
      * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
      * any), and the number of prior scale storage operations. Typical migration times
      * are under 24 hours, but the process can take up to several days in some cases.
-     * During the migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place, nightly
-     * backups for the instance will be suspended. No other Amazon RDS operations can
-     * take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
-     * creating a DB snapshot of the instance.</p>
+     * During the migration, the DB instance is available for use, but might experience
+     * performance degradation. While the migration takes place, nightly backups for
+     * the instance are suspended. No other Amazon RDS operations can take place for
+     * the instance, including modifying the instance, rebooting the instance, deleting
+     * the instance, creating a Read Replica for the instance, and creating a DB
+     * snapshot of the instance.</p>
      */
     inline ModifyDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -1586,9 +1537,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline const Aws::String& GetNewDBInstanceIdentifier() const{ return m_newDBInstanceIdentifier; }
 
@@ -1598,9 +1550,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline void SetNewDBInstanceIdentifier(const Aws::String& value) { m_newDBInstanceIdentifierHasBeenSet = true; m_newDBInstanceIdentifier = value; }
 
@@ -1610,9 +1563,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline void SetNewDBInstanceIdentifier(Aws::String&& value) { m_newDBInstanceIdentifierHasBeenSet = true; m_newDBInstanceIdentifier = std::move(value); }
 
@@ -1622,9 +1576,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline void SetNewDBInstanceIdentifier(const char* value) { m_newDBInstanceIdentifierHasBeenSet = true; m_newDBInstanceIdentifier.assign(value); }
 
@@ -1634,9 +1589,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(const Aws::String& value) { SetNewDBInstanceIdentifier(value); return *this;}
 
@@ -1646,9 +1602,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(Aws::String&& value) { SetNewDBInstanceIdentifier(std::move(value)); return *this;}
 
@@ -1658,9 +1615,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(const char* value) { SetNewDBInstanceIdentifier(value); return *this;}
 
@@ -2255,35 +2213,69 @@ namespace Model
     inline ModifyDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
 
-    
+    /**
+     * <p>True to enable Performance Insights for the DB instance; otherwise false.</p>
+     */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
-    
+    /**
+     * <p>True to enable Performance Insights for the DB instance; otherwise false.</p>
+     */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
-    
+    /**
+     * <p>True to enable Performance Insights for the DB instance; otherwise false.</p>
+     */
     inline ModifyDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
   private:

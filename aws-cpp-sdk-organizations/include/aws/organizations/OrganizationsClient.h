@@ -373,7 +373,7 @@ namespace Model
 
         virtual ~OrganizationsClient();
 
-        inline virtual const char* GetServiceClientName() override { return "organizations"; }
+        inline virtual const char* GetServiceClientName() const override { return "organizations"; }
 
 
         /**
@@ -381,9 +381,18 @@ namespace Model
          * proposed by the handshake request. </p> <p>This operation can be called only by
          * the following principals when they also have the relevant IAM permissions:</p>
          * <ul> <li> <p> <b>Invitation to join</b> or <b>Approve all features request</b>
-         * handshakes: only a principal from the member account. </p> </li> <li> <p>
-         * <b>Enable all features final confirmation</b> handshake: only a principal from
-         * the master account.</p> <p>For more information about invitations, see <a
+         * handshakes: only a principal from the member account. </p> <p>The user who calls
+         * the API for an invitation to join must have the
+         * <code>organizations:AcceptHandshake</code> permission. If you enabled all
+         * features in the organization, then the user must also have the
+         * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
+         * create the required service-linked role named <i>OrgsServiceLinkedRoleName</i>.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
+         * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
+         * Guide</i>.</p> </li> <li> <p> <b>Enable all features final confirmation</b>
+         * handshake: only a principal from the master account.</p> <p>For more information
+         * about invitations, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
          * an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>. For more information about requests to enable all features in the
@@ -403,9 +412,18 @@ namespace Model
          * proposed by the handshake request. </p> <p>This operation can be called only by
          * the following principals when they also have the relevant IAM permissions:</p>
          * <ul> <li> <p> <b>Invitation to join</b> or <b>Approve all features request</b>
-         * handshakes: only a principal from the member account. </p> </li> <li> <p>
-         * <b>Enable all features final confirmation</b> handshake: only a principal from
-         * the master account.</p> <p>For more information about invitations, see <a
+         * handshakes: only a principal from the member account. </p> <p>The user who calls
+         * the API for an invitation to join must have the
+         * <code>organizations:AcceptHandshake</code> permission. If you enabled all
+         * features in the organization, then the user must also have the
+         * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
+         * create the required service-linked role named <i>OrgsServiceLinkedRoleName</i>.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
+         * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
+         * Guide</i>.</p> </li> <li> <p> <b>Enable all features final confirmation</b>
+         * handshake: only a principal from the master account.</p> <p>For more information
+         * about invitations, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
          * an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>. For more information about requests to enable all features in the
@@ -427,9 +445,18 @@ namespace Model
          * proposed by the handshake request. </p> <p>This operation can be called only by
          * the following principals when they also have the relevant IAM permissions:</p>
          * <ul> <li> <p> <b>Invitation to join</b> or <b>Approve all features request</b>
-         * handshakes: only a principal from the member account. </p> </li> <li> <p>
-         * <b>Enable all features final confirmation</b> handshake: only a principal from
-         * the master account.</p> <p>For more information about invitations, see <a
+         * handshakes: only a principal from the member account. </p> <p>The user who calls
+         * the API for an invitation to join must have the
+         * <code>organizations:AcceptHandshake</code> permission. If you enabled all
+         * features in the organization, then the user must also have the
+         * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
+         * create the required service-linked role named <i>OrgsServiceLinkedRoleName</i>.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
+         * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
+         * Guide</i>.</p> </li> <li> <p> <b>Enable all features final confirmation</b>
+         * handshake: only a principal from the master account.</p> <p>For more information
+         * about invitations, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
          * an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>. For more information about requests to enable all features in the
@@ -610,12 +637,23 @@ namespace Model
          * performs in the background. If you want to check the status of the request
          * later, you need the <code>OperationId</code> response element from this
          * operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
-         * operation.</p> <p>AWS Organizations preconfigures the new member account with a
-         * role (named <code>OrganizationAccountAccessRole</code> by default) that grants
-         * administrator permissions to the new account. Principals in the master account
-         * can assume the role. AWS Organizations clones the company name and address
-         * information for the new account from the organization's master account.</p>
-         * <p>For more information about creating accounts, see <a
+         * operation.</p> <p>The user who calls the API for an invitation to join must have
+         * the <code>organizations:CreateAccount</code> permission. If you enabled all
+         * features in the organization, then the user must also have the
+         * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
+         * create the required service-linked role named <i>OrgsServiceLinkedRoleName</i>.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
+         * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
+         * Guide</i>.</p> <p>The user in the master account who calls this API must also
+         * have the <code>iam:CreateRole</code> permission because AWS Organizations
+         * preconfigures the new member account with a role (named
+         * <code>OrganizationAccountAccessRole</code>) that grants users in the master
+         * account administrator permissions in the new member account. Principals in the
+         * master account can assume the role. AWS Organizations clones the company name
+         * and address information for the new account from the organization's master
+         * account.</p> <p>This operation can be called only from the organization's master
+         * account.</p> <p>For more information about creating accounts, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> <important> <p>When you create an account in an organization
@@ -635,8 +673,7 @@ namespace Model
          * disable this, then only the account root user can access billing information.
          * For information about how to disable this for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
-         * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
-         * can be called only from the organization's master account.</p> <important> <p>If
+         * Access to Your Billing Information and Tools</a>.</p> </note> <important> <p>If
          * you get an exception that indicates that you exceeded your account limits for
          * the organization or that you can"t add an account because your organization is
          * still initializing, please contact <a
@@ -653,12 +690,23 @@ namespace Model
          * performs in the background. If you want to check the status of the request
          * later, you need the <code>OperationId</code> response element from this
          * operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
-         * operation.</p> <p>AWS Organizations preconfigures the new member account with a
-         * role (named <code>OrganizationAccountAccessRole</code> by default) that grants
-         * administrator permissions to the new account. Principals in the master account
-         * can assume the role. AWS Organizations clones the company name and address
-         * information for the new account from the organization's master account.</p>
-         * <p>For more information about creating accounts, see <a
+         * operation.</p> <p>The user who calls the API for an invitation to join must have
+         * the <code>organizations:CreateAccount</code> permission. If you enabled all
+         * features in the organization, then the user must also have the
+         * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
+         * create the required service-linked role named <i>OrgsServiceLinkedRoleName</i>.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
+         * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
+         * Guide</i>.</p> <p>The user in the master account who calls this API must also
+         * have the <code>iam:CreateRole</code> permission because AWS Organizations
+         * preconfigures the new member account with a role (named
+         * <code>OrganizationAccountAccessRole</code>) that grants users in the master
+         * account administrator permissions in the new member account. Principals in the
+         * master account can assume the role. AWS Organizations clones the company name
+         * and address information for the new account from the organization's master
+         * account.</p> <p>This operation can be called only from the organization's master
+         * account.</p> <p>For more information about creating accounts, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> <important> <p>When you create an account in an organization
@@ -678,8 +726,7 @@ namespace Model
          * disable this, then only the account root user can access billing information.
          * For information about how to disable this for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
-         * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
-         * can be called only from the organization's master account.</p> <important> <p>If
+         * Access to Your Billing Information and Tools</a>.</p> </note> <important> <p>If
          * you get an exception that indicates that you exceeded your account limits for
          * the organization or that you can"t add an account because your organization is
          * still initializing, please contact <a
@@ -698,12 +745,23 @@ namespace Model
          * performs in the background. If you want to check the status of the request
          * later, you need the <code>OperationId</code> response element from this
          * operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
-         * operation.</p> <p>AWS Organizations preconfigures the new member account with a
-         * role (named <code>OrganizationAccountAccessRole</code> by default) that grants
-         * administrator permissions to the new account. Principals in the master account
-         * can assume the role. AWS Organizations clones the company name and address
-         * information for the new account from the organization's master account.</p>
-         * <p>For more information about creating accounts, see <a
+         * operation.</p> <p>The user who calls the API for an invitation to join must have
+         * the <code>organizations:CreateAccount</code> permission. If you enabled all
+         * features in the organization, then the user must also have the
+         * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
+         * create the required service-linked role named <i>OrgsServiceLinkedRoleName</i>.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
+         * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
+         * Guide</i>.</p> <p>The user in the master account who calls this API must also
+         * have the <code>iam:CreateRole</code> permission because AWS Organizations
+         * preconfigures the new member account with a role (named
+         * <code>OrganizationAccountAccessRole</code>) that grants users in the master
+         * account administrator permissions in the new member account. Principals in the
+         * master account can assume the role. AWS Organizations clones the company name
+         * and address information for the new account from the organization's master
+         * account.</p> <p>This operation can be called only from the organization's master
+         * account.</p> <p>For more information about creating accounts, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> <important> <p>When you create an account in an organization
@@ -723,8 +781,7 @@ namespace Model
          * disable this, then only the account root user can access billing information.
          * For information about how to disable this for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
-         * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
-         * can be called only from the organization's master account.</p> <important> <p>If
+         * Access to Your Billing Information and Tools</a>.</p> </note> <important> <p>If
          * you get an exception that indicates that you exceeded your account limits for
          * the organization or that you can"t add an account because your organization is
          * still initializing, please contact <a
@@ -1683,8 +1740,9 @@ namespace Model
          * target root or organizational unit (OU). If you specify the root, you get a list
          * of all the accounts that are not in any OU. If you specify an OU, you get a list
          * of all the accounts in only that OU, and not in any child OUs. To get a list of
-         * all accounts in the organization, use the <a>ListAccounts</a>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * all accounts in the organization, use the <a>ListAccounts</a> operation.</p>
+         * <p>This operation can be called only from the organization's master
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
          * API Reference</a></p>
          */
@@ -1695,8 +1753,9 @@ namespace Model
          * target root or organizational unit (OU). If you specify the root, you get a list
          * of all the accounts that are not in any OU. If you specify an OU, you get a list
          * of all the accounts in only that OU, and not in any child OUs. To get a list of
-         * all accounts in the organization, use the <a>ListAccounts</a>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * all accounts in the organization, use the <a>ListAccounts</a> operation.</p>
+         * <p>This operation can be called only from the organization's master
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
          * API Reference</a></p>
          *
@@ -1709,8 +1768,9 @@ namespace Model
          * target root or organizational unit (OU). If you specify the root, you get a list
          * of all the accounts that are not in any OU. If you specify an OU, you get a list
          * of all the accounts in only that OU, and not in any child OUs. To get a list of
-         * all accounts in the organization, use the <a>ListAccounts</a>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * all accounts in the organization, use the <a>ListAccounts</a> operation.</p>
+         * <p>This operation can be called only from the organization's master
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
          * API Reference</a></p>
          *
@@ -1721,7 +1781,8 @@ namespace Model
         /**
          * <p>Lists all of the OUs or accounts that are contained in the specified parent
          * OU or root. This operation, along with <a>ListParents</a> enables you to
-         * traverse the tree structure that makes up this root.</p><p><h3>See Also:</h3>  
+         * traverse the tree structure that makes up this root.</p> <p>This operation can
+         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
          * API Reference</a></p>
@@ -1731,7 +1792,8 @@ namespace Model
         /**
          * <p>Lists all of the OUs or accounts that are contained in the specified parent
          * OU or root. This operation, along with <a>ListParents</a> enables you to
-         * traverse the tree structure that makes up this root.</p><p><h3>See Also:</h3>  
+         * traverse the tree structure that makes up this root.</p> <p>This operation can
+         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
          * API Reference</a></p>
@@ -1743,7 +1805,8 @@ namespace Model
         /**
          * <p>Lists all of the OUs or accounts that are contained in the specified parent
          * OU or root. This operation, along with <a>ListParents</a> enables you to
-         * traverse the tree structure that makes up this root.</p><p><h3>See Also:</h3>  
+         * traverse the tree structure that makes up this root.</p> <p>This operation can
+         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
          * API Reference</a></p>

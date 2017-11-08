@@ -94,6 +94,12 @@ namespace Aws
         static const int c4_2xlarge_HASH = HashingUtils::HashString("c4.2xlarge");
         static const int c4_4xlarge_HASH = HashingUtils::HashString("c4.4xlarge");
         static const int c4_8xlarge_HASH = HashingUtils::HashString("c4.8xlarge");
+        static const int c5_large_HASH = HashingUtils::HashString("c5.large");
+        static const int c5_xlarge_HASH = HashingUtils::HashString("c5.xlarge");
+        static const int c5_2xlarge_HASH = HashingUtils::HashString("c5.2xlarge");
+        static const int c5_4xlarge_HASH = HashingUtils::HashString("c5.4xlarge");
+        static const int c5_9xlarge_HASH = HashingUtils::HashString("c5.9xlarge");
+        static const int c5_18xlarge_HASH = HashingUtils::HashString("c5.18xlarge");
         static const int cc1_4xlarge_HASH = HashingUtils::HashString("cc1.4xlarge");
         static const int cc2_8xlarge_HASH = HashingUtils::HashString("cc2.8xlarge");
         static const int g2_2xlarge_HASH = HashingUtils::HashString("g2.2xlarge");
@@ -105,6 +111,9 @@ namespace Aws
         static const int p2_xlarge_HASH = HashingUtils::HashString("p2.xlarge");
         static const int p2_8xlarge_HASH = HashingUtils::HashString("p2.8xlarge");
         static const int p2_16xlarge_HASH = HashingUtils::HashString("p2.16xlarge");
+        static const int p3_2xlarge_HASH = HashingUtils::HashString("p3.2xlarge");
+        static const int p3_8xlarge_HASH = HashingUtils::HashString("p3.8xlarge");
+        static const int p3_16xlarge_HASH = HashingUtils::HashString("p3.16xlarge");
         static const int d2_xlarge_HASH = HashingUtils::HashString("d2.xlarge");
         static const int d2_2xlarge_HASH = HashingUtils::HashString("d2.2xlarge");
         static const int d2_4xlarge_HASH = HashingUtils::HashString("d2.4xlarge");
@@ -372,6 +381,30 @@ namespace Aws
           {
             return InstanceType::c4_8xlarge;
           }
+          else if (hashCode == c5_large_HASH)
+          {
+            return InstanceType::c5_large;
+          }
+          else if (hashCode == c5_xlarge_HASH)
+          {
+            return InstanceType::c5_xlarge;
+          }
+          else if (hashCode == c5_2xlarge_HASH)
+          {
+            return InstanceType::c5_2xlarge;
+          }
+          else if (hashCode == c5_4xlarge_HASH)
+          {
+            return InstanceType::c5_4xlarge;
+          }
+          else if (hashCode == c5_9xlarge_HASH)
+          {
+            return InstanceType::c5_9xlarge;
+          }
+          else if (hashCode == c5_18xlarge_HASH)
+          {
+            return InstanceType::c5_18xlarge;
+          }
           else if (hashCode == cc1_4xlarge_HASH)
           {
             return InstanceType::cc1_4xlarge;
@@ -415,6 +448,18 @@ namespace Aws
           else if (hashCode == p2_16xlarge_HASH)
           {
             return InstanceType::p2_16xlarge;
+          }
+          else if (hashCode == p3_2xlarge_HASH)
+          {
+            return InstanceType::p3_2xlarge;
+          }
+          else if (hashCode == p3_8xlarge_HASH)
+          {
+            return InstanceType::p3_8xlarge;
+          }
+          else if (hashCode == p3_16xlarge_HASH)
+          {
+            return InstanceType::p3_16xlarge;
           }
           else if (hashCode == d2_xlarge_HASH)
           {
@@ -582,6 +627,18 @@ namespace Aws
             return "c4.4xlarge";
           case InstanceType::c4_8xlarge:
             return "c4.8xlarge";
+          case InstanceType::c5_large:
+            return "c5.large";
+          case InstanceType::c5_xlarge:
+            return "c5.xlarge";
+          case InstanceType::c5_2xlarge:
+            return "c5.2xlarge";
+          case InstanceType::c5_4xlarge:
+            return "c5.4xlarge";
+          case InstanceType::c5_9xlarge:
+            return "c5.9xlarge";
+          case InstanceType::c5_18xlarge:
+            return "c5.18xlarge";
           case InstanceType::cc1_4xlarge:
             return "cc1.4xlarge";
           case InstanceType::cc2_8xlarge:
@@ -604,6 +661,12 @@ namespace Aws
             return "p2.8xlarge";
           case InstanceType::p2_16xlarge:
             return "p2.16xlarge";
+          case InstanceType::p3_2xlarge:
+            return "p3.2xlarge";
+          case InstanceType::p3_8xlarge:
+            return "p3.8xlarge";
+          case InstanceType::p3_16xlarge:
+            return "p3.16xlarge";
           case InstanceType::d2_xlarge:
             return "d2.xlarge";
           case InstanceType::d2_2xlarge:

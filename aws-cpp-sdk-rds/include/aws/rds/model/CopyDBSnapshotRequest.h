@@ -188,8 +188,8 @@ namespace Model
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
      * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
-     * 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline const Aws::String& GetTargetDBSnapshotIdentifier() const{ return m_targetDBSnapshotIdentifier; }
@@ -197,8 +197,8 @@ namespace Model
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
      * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
-     * 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline void SetTargetDBSnapshotIdentifier(const Aws::String& value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier = value; }
@@ -206,8 +206,8 @@ namespace Model
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
      * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
-     * 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline void SetTargetDBSnapshotIdentifier(Aws::String&& value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier = std::move(value); }
@@ -215,8 +215,8 @@ namespace Model
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
      * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
-     * 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline void SetTargetDBSnapshotIdentifier(const char* value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier.assign(value); }
@@ -224,8 +224,8 @@ namespace Model
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
      * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
-     * 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(const Aws::String& value) { SetTargetDBSnapshotIdentifier(value); return *this;}
@@ -233,8 +233,8 @@ namespace Model
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
      * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
-     * 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(Aws::String&& value) { SetTargetDBSnapshotIdentifier(std::move(value)); return *this;}
@@ -242,8 +242,8 @@ namespace Model
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
      * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
-     * 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(const char* value) { SetTargetDBSnapshotIdentifier(value); return *this;}
@@ -421,8 +421,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -459,8 +459,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -497,8 +497,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -535,8 +535,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -573,8 +573,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -611,8 +611,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -649,8 +649,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a

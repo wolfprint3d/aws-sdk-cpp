@@ -304,7 +304,7 @@ namespace Model
 
         virtual ~ElastiCacheClient();
 
-        inline virtual const char* GetServiceClientName() override { return "elasticache"; }
+        inline virtual const char* GetServiceClientName() const override { return "elasticache"; }
 
 
        /**
@@ -1740,7 +1740,13 @@ namespace Model
          * outage to the cache cluster. During the reboot, the cache cluster status is set
          * to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache
          * node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache
-         * cluster event is created.</p><p><h3>See Also:</h3>   <a
+         * cluster event is created.</p> <p>Rebooting a cluster is currently supported on
+         * Memcached and Redis (cluster mode disabled) clusters. Rebooting is not supported
+         * on Redis (cluster mode enabled) clusters.</p> <p>If you make changes to
+         * parameters that require a Redis (cluster mode enabled) cluster reboot for the
+         * changes to be applied, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.htm">Rebooting
+         * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
          * API Reference</a></p>
          */
@@ -1753,7 +1759,13 @@ namespace Model
          * outage to the cache cluster. During the reboot, the cache cluster status is set
          * to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache
          * node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache
-         * cluster event is created.</p><p><h3>See Also:</h3>   <a
+         * cluster event is created.</p> <p>Rebooting a cluster is currently supported on
+         * Memcached and Redis (cluster mode disabled) clusters. Rebooting is not supported
+         * on Redis (cluster mode enabled) clusters.</p> <p>If you make changes to
+         * parameters that require a Redis (cluster mode enabled) cluster reboot for the
+         * changes to be applied, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.htm">Rebooting
+         * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
          * API Reference</a></p>
          *
@@ -1768,7 +1780,13 @@ namespace Model
          * outage to the cache cluster. During the reboot, the cache cluster status is set
          * to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache
          * node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache
-         * cluster event is created.</p><p><h3>See Also:</h3>   <a
+         * cluster event is created.</p> <p>Rebooting a cluster is currently supported on
+         * Memcached and Redis (cluster mode disabled) clusters. Rebooting is not supported
+         * on Redis (cluster mode enabled) clusters.</p> <p>If you make changes to
+         * parameters that require a Redis (cluster mode enabled) cluster reboot for the
+         * changes to be applied, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.htm">Rebooting
+         * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
          * API Reference</a></p>
          *

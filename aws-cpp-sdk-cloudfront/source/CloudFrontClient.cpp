@@ -35,6 +35,7 @@
 #include <aws/cloudfront/model/CreateStreamingDistributionWithTags2017_03_25Request.h>
 #include <aws/cloudfront/model/DeleteCloudFrontOriginAccessIdentity2017_03_25Request.h>
 #include <aws/cloudfront/model/DeleteDistribution2017_03_25Request.h>
+#include <aws/cloudfront/model/DeleteServiceLinkedRole2017_03_25Request.h>
 #include <aws/cloudfront/model/DeleteStreamingDistribution2017_03_25Request.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2017_03_25Request.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentityConfig2017_03_25Request.h>
@@ -194,7 +195,9 @@ CreateDistributionWithTags2017_03_25Outcome CloudFrontClient::CreateDistribution
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/2017-03-25/distribution?WithTags";
+  ss << "/2017-03-25/distribution";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?WithTags");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -301,7 +304,9 @@ CreateStreamingDistributionWithTags2017_03_25Outcome CloudFrontClient::CreateStr
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/2017-03-25/streaming-distribution?WithTags";
+  ss << "/2017-03-25/streaming-distribution";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?WithTags");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -402,6 +407,42 @@ void CloudFrontClient::DeleteDistribution2017_03_25Async(const DeleteDistributio
 void CloudFrontClient::DeleteDistribution2017_03_25AsyncHelper(const DeleteDistribution2017_03_25Request& request, const DeleteDistribution2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDistribution2017_03_25(request), context);
+}
+
+DeleteServiceLinkedRole2017_03_25Outcome CloudFrontClient::DeleteServiceLinkedRole2017_03_25(const DeleteServiceLinkedRole2017_03_25Request& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2017-03-25/service-linked-role/";
+  ss << request.GetRoleName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteServiceLinkedRole2017_03_25Outcome(NoResult());
+  }
+  else
+  {
+    return DeleteServiceLinkedRole2017_03_25Outcome(outcome.GetError());
+  }
+}
+
+DeleteServiceLinkedRole2017_03_25OutcomeCallable CloudFrontClient::DeleteServiceLinkedRole2017_03_25Callable(const DeleteServiceLinkedRole2017_03_25Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteServiceLinkedRole2017_03_25Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteServiceLinkedRole2017_03_25(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::DeleteServiceLinkedRole2017_03_25Async(const DeleteServiceLinkedRole2017_03_25Request& request, const DeleteServiceLinkedRole2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceLinkedRole2017_03_25AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::DeleteServiceLinkedRole2017_03_25AsyncHelper(const DeleteServiceLinkedRole2017_03_25Request& request, const DeleteServiceLinkedRole2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteServiceLinkedRole2017_03_25(request), context);
 }
 
 DeleteStreamingDistribution2017_03_25Outcome CloudFrontClient::DeleteStreamingDistribution2017_03_25(const DeleteStreamingDistribution2017_03_25Request& request) const
@@ -914,7 +955,9 @@ TagResource2017_03_25Outcome CloudFrontClient::TagResource2017_03_25(const TagRe
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/2017-03-25/tagging?Operation=Tag";
+  ss << "/2017-03-25/tagging";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?Operation=Tag");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -949,7 +992,9 @@ UntagResource2017_03_25Outcome CloudFrontClient::UntagResource2017_03_25(const U
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/2017-03-25/tagging?Operation=Untag";
+  ss << "/2017-03-25/tagging";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?Operation=Untag");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())

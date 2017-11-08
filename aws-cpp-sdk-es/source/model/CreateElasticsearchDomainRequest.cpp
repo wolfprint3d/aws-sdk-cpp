@@ -29,7 +29,9 @@ CreateElasticsearchDomainRequest::CreateElasticsearchDomainRequest() :
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false)
+    m_vPCOptionsHasBeenSet(false),
+    m_advancedOptionsHasBeenSet(false),
+    m_logPublishingOptionsHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,12 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const
 
   }
 
+  if(m_vPCOptionsHasBeenSet)
+  {
+   payload.WithObject("VPCOptions", m_vPCOptions.Jsonize());
+
+  }
+
   if(m_advancedOptionsHasBeenSet)
   {
    JsonValue advancedOptionsJsonMap;
@@ -81,6 +89,17 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const
      advancedOptionsJsonMap.WithString(advancedOptionsItem.first, advancedOptionsItem.second);
    }
    payload.WithObject("AdvancedOptions", std::move(advancedOptionsJsonMap));
+
+  }
+
+  if(m_logPublishingOptionsHasBeenSet)
+  {
+   JsonValue logPublishingOptionsJsonMap;
+   for(auto& logPublishingOptionsItem : m_logPublishingOptions)
+   {
+     logPublishingOptionsJsonMap.WithObject(LogTypeMapper::GetNameForLogType(logPublishingOptionsItem.first), logPublishingOptionsItem.second.Jsonize());
+   }
+   payload.WithObject("LogPublishingOptions", std::move(logPublishingOptionsJsonMap));
 
   }
 

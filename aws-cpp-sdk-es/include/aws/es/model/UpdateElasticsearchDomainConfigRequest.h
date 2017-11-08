@@ -20,7 +20,10 @@
 #include <aws/es/model/ElasticsearchClusterConfig.h>
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/SnapshotOptions.h>
+#include <aws/es/model/VPCOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/es/model/LogType.h>
+#include <aws/es/model/LogPublishingOption.h>
 #include <utility>
 
 namespace Aws
@@ -171,6 +174,52 @@ namespace Model
 
 
     /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline const VPCOptions& GetVPCOptions() const{ return m_vPCOptions; }
+
+    /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline void SetVPCOptions(const VPCOptions& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = value; }
+
+    /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline void SetVPCOptions(VPCOptions&& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = std::move(value); }
+
+    /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithVPCOptions(const VPCOptions& value) { SetVPCOptions(value); return *this;}
+
+    /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithVPCOptions(VPCOptions&& value) { SetVPCOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>Modifies the advanced option to allow references to indices in an HTTP
      * request body. Must be <code>false</code> when configuring access to individual
      * sub-resources. By default, the value is <code>true</code>. See <a
@@ -314,6 +363,61 @@ namespace Model
      */
     inline UpdateElasticsearchDomainConfigRequest& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
 
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline void SetLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline void SetLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { SetLogPublishingOptions(value); return *this;}
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& AddLogPublishingOptions(const LogType& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, value); return *this; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& AddLogPublishingOptions(LogType&& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& AddLogPublishingOptions(const LogType& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& AddLogPublishingOptions(LogType&& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domainName;
@@ -328,11 +432,17 @@ namespace Model
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet;
 
+    VPCOptions m_vPCOptions;
+    bool m_vPCOptionsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
 
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet;
+
+    Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
+    bool m_logPublishingOptionsHasBeenSet;
   };
 
 } // namespace Model

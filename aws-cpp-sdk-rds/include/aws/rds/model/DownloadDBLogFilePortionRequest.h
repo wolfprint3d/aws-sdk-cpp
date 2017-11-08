@@ -51,64 +51,50 @@ namespace Model
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
@@ -201,9 +187,9 @@ namespace Model
 
     /**
      * <p>The number of lines to download. If the number of lines specified results in
-     * a file over 1 MB in size, the file will be truncated at 1 MB in size.</p> <p>If
-     * the NumberOfLines parameter is specified, then the block of lines returned can
-     * be from the beginning or the end of the log file, depending on the value of the
+     * a file over 1 MB in size, the file is truncated at 1 MB in size.</p> <p>If the
+     * NumberOfLines parameter is specified, then the block of lines returned can be
+     * from the beginning or the end of the log file, depending on the value of the
      * Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are
      * specified, the entire log file is returned up to a maximum of 10000 lines,
      * starting with the most recent log entries first.</p> </li> <li> <p>If
@@ -221,9 +207,9 @@ namespace Model
 
     /**
      * <p>The number of lines to download. If the number of lines specified results in
-     * a file over 1 MB in size, the file will be truncated at 1 MB in size.</p> <p>If
-     * the NumberOfLines parameter is specified, then the block of lines returned can
-     * be from the beginning or the end of the log file, depending on the value of the
+     * a file over 1 MB in size, the file is truncated at 1 MB in size.</p> <p>If the
+     * NumberOfLines parameter is specified, then the block of lines returned can be
+     * from the beginning or the end of the log file, depending on the value of the
      * Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are
      * specified, the entire log file is returned up to a maximum of 10000 lines,
      * starting with the most recent log entries first.</p> </li> <li> <p>If
@@ -241,9 +227,9 @@ namespace Model
 
     /**
      * <p>The number of lines to download. If the number of lines specified results in
-     * a file over 1 MB in size, the file will be truncated at 1 MB in size.</p> <p>If
-     * the NumberOfLines parameter is specified, then the block of lines returned can
-     * be from the beginning or the end of the log file, depending on the value of the
+     * a file over 1 MB in size, the file is truncated at 1 MB in size.</p> <p>If the
+     * NumberOfLines parameter is specified, then the block of lines returned can be
+     * from the beginning or the end of the log file, depending on the value of the
      * Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are
      * specified, the entire log file is returned up to a maximum of 10000 lines,
      * starting with the most recent log entries first.</p> </li> <li> <p>If

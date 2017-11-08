@@ -16,10 +16,13 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/es/model/ElasticsearchClusterConfig.h>
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/SnapshotOptions.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/es/model/VPCDerivedInfo.h>
+#include <aws/es/model/LogType.h>
+#include <aws/es/model/LogPublishingOption.h>
 #include <utility>
 
 namespace Aws
@@ -291,6 +294,91 @@ namespace Model
 
 
     /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEndpoints() const{ return m_endpoints; }
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline void SetEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline void SetEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& WithEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { SetEndpoints(value); return *this;}
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& WithEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { SetEndpoints(std::move(value)); return *this;}
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& AddEndpoints(const Aws::String& key, const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& AddEndpoints(Aws::String&& key, const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& AddEndpoints(const Aws::String& key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& AddEndpoints(Aws::String&& key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& AddEndpoints(const char* key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& AddEndpoints(Aws::String&& key, const char* value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& AddEndpoints(const char* key, const char* value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The status of the Elasticsearch domain configuration. <code>True</code> if
      * Amazon Elasticsearch Service is processing configuration changes.
      * <code>False</code> if the configuration is active.</p>
@@ -459,6 +547,47 @@ namespace Model
 
 
     /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline const VPCDerivedInfo& GetVPCOptions() const{ return m_vPCOptions; }
+
+    /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline void SetVPCOptions(const VPCDerivedInfo& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = value; }
+
+    /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline void SetVPCOptions(VPCDerivedInfo&& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = std::move(value); }
+
+    /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline ElasticsearchDomainStatus& WithVPCOptions(const VPCDerivedInfo& value) { SetVPCOptions(value); return *this;}
+
+    /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline ElasticsearchDomainStatus& WithVPCOptions(VPCDerivedInfo&& value) { SetVPCOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the status of the <code>AdvancedOptions</code></p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdvancedOptions() const{ return m_advancedOptions; }
@@ -518,6 +647,52 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline void SetLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline void SetLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& WithLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { SetLogPublishingOptions(value); return *this;}
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& WithLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& AddLogPublishingOptions(const LogType& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, value); return *this; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& AddLogPublishingOptions(LogType&& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& AddLogPublishingOptions(const LogType& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& AddLogPublishingOptions(LogType&& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domainId;
@@ -538,6 +713,9 @@ namespace Model
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
 
+    Aws::Map<Aws::String, Aws::String> m_endpoints;
+    bool m_endpointsHasBeenSet;
+
     bool m_processing;
     bool m_processingHasBeenSet;
 
@@ -556,8 +734,14 @@ namespace Model
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet;
 
+    VPCDerivedInfo m_vPCOptions;
+    bool m_vPCOptionsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
+
+    Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
+    bool m_logPublishingOptionsHasBeenSet;
   };
 
 } // namespace Model

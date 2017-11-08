@@ -20,7 +20,9 @@
 #include <aws/es/model/EBSOptionsStatus.h>
 #include <aws/es/model/AccessPoliciesStatus.h>
 #include <aws/es/model/SnapshotOptionsStatus.h>
+#include <aws/es/model/VPCDerivedInfoStatus.h>
 #include <aws/es/model/AdvancedOptionsStatus.h>
+#include <aws/es/model/LogPublishingOptionsStatus.h>
 #include <utility>
 
 namespace Aws
@@ -187,6 +189,47 @@ namespace Model
 
 
     /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline const VPCDerivedInfoStatus& GetVPCOptions() const{ return m_vPCOptions; }
+
+    /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline void SetVPCOptions(const VPCDerivedInfoStatus& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = value; }
+
+    /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline void SetVPCOptions(VPCDerivedInfoStatus&& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = std::move(value); }
+
+    /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline ElasticsearchDomainConfig& WithVPCOptions(const VPCDerivedInfoStatus& value) { SetVPCOptions(value); return *this;}
+
+    /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline ElasticsearchDomainConfig& WithVPCOptions(VPCDerivedInfoStatus&& value) { SetVPCOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.</p>
@@ -221,6 +264,32 @@ namespace Model
      */
     inline ElasticsearchDomainConfig& WithAdvancedOptions(AdvancedOptionsStatus&& value) { SetAdvancedOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline const LogPublishingOptionsStatus& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline void SetLogPublishingOptions(const LogPublishingOptionsStatus& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline void SetLogPublishingOptions(LogPublishingOptionsStatus&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainConfig& WithLogPublishingOptions(const LogPublishingOptionsStatus& value) { SetLogPublishingOptions(value); return *this;}
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainConfig& WithLogPublishingOptions(LogPublishingOptionsStatus&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
+
   private:
 
     ElasticsearchVersionStatus m_elasticsearchVersion;
@@ -238,8 +307,14 @@ namespace Model
     SnapshotOptionsStatus m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet;
 
+    VPCDerivedInfoStatus m_vPCOptions;
+    bool m_vPCOptionsHasBeenSet;
+
     AdvancedOptionsStatus m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
+
+    LogPublishingOptionsStatus m_logPublishingOptions;
+    bool m_logPublishingOptionsHasBeenSet;
   };
 
 } // namespace Model

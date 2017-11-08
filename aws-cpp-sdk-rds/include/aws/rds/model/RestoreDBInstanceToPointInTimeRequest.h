@@ -54,121 +54,107 @@ namespace Model
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDBInstanceIdentifier() const{ return m_sourceDBInstanceIdentifier; }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(Aws::String&& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const char* value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(const Aws::String& value) { SetSourceDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(Aws::String&& value) { SetSourceDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(const char* value) { SetSourceDBInstanceIdentifier(value); return *this;}
 
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetTargetDBInstanceIdentifier() const{ return m_targetDBInstanceIdentifier; }
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(const char* value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const Aws::String& value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const char* value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
@@ -245,86 +231,79 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -352,7 +331,7 @@ namespace Model
 
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -360,7 +339,7 @@ namespace Model
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -368,7 +347,7 @@ namespace Model
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -376,7 +355,7 @@ namespace Model
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -384,7 +363,7 @@ namespace Model
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -392,7 +371,7 @@ namespace Model
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -400,7 +379,7 @@ namespace Model
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -409,57 +388,50 @@ namespace Model
 
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
@@ -496,10 +468,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -512,10 +484,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -528,28 +500,28 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
 
     /**
-     * <p>Indicates that minor version upgrades will be applied automatically to the DB
+     * <p>Indicates that minor version upgrades are applied automatically to the DB
      * instance during the maintenance window.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor version upgrades will be applied automatically to the DB
+     * <p>Indicates that minor version upgrades are applied automatically to the DB
      * instance during the maintenance window.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor version upgrades will be applied automatically to the DB
+     * <p>Indicates that minor version upgrades are applied automatically to the DB
      * instance during the maintenance window.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
@@ -651,77 +623,98 @@ namespace Model
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
