@@ -20,7 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <functional>
 
-#if !__GNUG__ && !_MSC_VER
+#ifndef __GNUG__
 
 namespace Aws
 {
@@ -46,7 +46,7 @@ std::function< F > BuildFunction(std::function< F >&& f)
 
 } // namespace Aws
 
-#else
+#else // __GNUG__
 
 namespace Aws
 {
