@@ -65,6 +65,11 @@ namespace Model
     r4_16xlarge,
     x1_16xlarge,
     x1_32xlarge,
+    x1e_xlarge,
+    x1e_2xlarge,
+    x1e_4xlarge,
+    x1e_8xlarge,
+    x1e_16xlarge,
     x1e_32xlarge,
     i2_xlarge,
     i2_2xlarge,
@@ -115,7 +120,17 @@ namespace Model
     d2_4xlarge,
     d2_8xlarge,
     f1_2xlarge,
-    f1_16xlarge
+    f1_16xlarge,
+    m5_large,
+    m5_xlarge,
+    m5_2xlarge,
+    m5_4xlarge,
+    m5_12xlarge,
+    m5_24xlarge,
+    h1_2xlarge,
+    h1_4xlarge,
+    h1_8xlarge,
+    h1_16xlarge
   };
 
 namespace InstanceTypeMapper

@@ -19,6 +19,8 @@
 #include <aws/apigateway/model/CacheClusterSize.h>
 #include <aws/apigateway/model/CacheClusterStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/apigateway/model/AccessLogSettings.h>
+#include <aws/apigateway/model/CanarySettings.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/apigateway/model/MethodSetting.h>
 #include <utility>
@@ -485,6 +487,58 @@ namespace Model
 
 
     /**
+     * <p>Settings for logging access in this stage.</p>
+     */
+    inline const AccessLogSettings& GetAccessLogSettings() const{ return m_accessLogSettings; }
+
+    /**
+     * <p>Settings for logging access in this stage.</p>
+     */
+    inline void SetAccessLogSettings(const AccessLogSettings& value) { m_accessLogSettings = value; }
+
+    /**
+     * <p>Settings for logging access in this stage.</p>
+     */
+    inline void SetAccessLogSettings(AccessLogSettings&& value) { m_accessLogSettings = std::move(value); }
+
+    /**
+     * <p>Settings for logging access in this stage.</p>
+     */
+    inline UpdateStageResult& WithAccessLogSettings(const AccessLogSettings& value) { SetAccessLogSettings(value); return *this;}
+
+    /**
+     * <p>Settings for logging access in this stage.</p>
+     */
+    inline UpdateStageResult& WithAccessLogSettings(AccessLogSettings&& value) { SetAccessLogSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline const CanarySettings& GetCanarySettings() const{ return m_canarySettings; }
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline void SetCanarySettings(const CanarySettings& value) { m_canarySettings = value; }
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline void SetCanarySettings(CanarySettings&& value) { m_canarySettings = std::move(value); }
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline UpdateStageResult& WithCanarySettings(const CanarySettings& value) { SetCanarySettings(value); return *this;}
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline UpdateStageResult& WithCanarySettings(CanarySettings&& value) { SetCanarySettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>The timestamp when the stage was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
@@ -556,6 +610,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_variables;
 
     Aws::String m_documentationVersion;
+
+    AccessLogSettings m_accessLogSettings;
+
+    CanarySettings m_canarySettings;
 
     Aws::Utils::DateTime m_createdDate;
 

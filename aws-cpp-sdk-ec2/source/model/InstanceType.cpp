@@ -69,6 +69,11 @@ namespace Aws
         static const int r4_16xlarge_HASH = HashingUtils::HashString("r4.16xlarge");
         static const int x1_16xlarge_HASH = HashingUtils::HashString("x1.16xlarge");
         static const int x1_32xlarge_HASH = HashingUtils::HashString("x1.32xlarge");
+        static const int x1e_xlarge_HASH = HashingUtils::HashString("x1e.xlarge");
+        static const int x1e_2xlarge_HASH = HashingUtils::HashString("x1e.2xlarge");
+        static const int x1e_4xlarge_HASH = HashingUtils::HashString("x1e.4xlarge");
+        static const int x1e_8xlarge_HASH = HashingUtils::HashString("x1e.8xlarge");
+        static const int x1e_16xlarge_HASH = HashingUtils::HashString("x1e.16xlarge");
         static const int x1e_32xlarge_HASH = HashingUtils::HashString("x1e.32xlarge");
         static const int i2_xlarge_HASH = HashingUtils::HashString("i2.xlarge");
         static const int i2_2xlarge_HASH = HashingUtils::HashString("i2.2xlarge");
@@ -120,6 +125,16 @@ namespace Aws
         static const int d2_8xlarge_HASH = HashingUtils::HashString("d2.8xlarge");
         static const int f1_2xlarge_HASH = HashingUtils::HashString("f1.2xlarge");
         static const int f1_16xlarge_HASH = HashingUtils::HashString("f1.16xlarge");
+        static const int m5_large_HASH = HashingUtils::HashString("m5.large");
+        static const int m5_xlarge_HASH = HashingUtils::HashString("m5.xlarge");
+        static const int m5_2xlarge_HASH = HashingUtils::HashString("m5.2xlarge");
+        static const int m5_4xlarge_HASH = HashingUtils::HashString("m5.4xlarge");
+        static const int m5_12xlarge_HASH = HashingUtils::HashString("m5.12xlarge");
+        static const int m5_24xlarge_HASH = HashingUtils::HashString("m5.24xlarge");
+        static const int h1_2xlarge_HASH = HashingUtils::HashString("h1.2xlarge");
+        static const int h1_4xlarge_HASH = HashingUtils::HashString("h1.4xlarge");
+        static const int h1_8xlarge_HASH = HashingUtils::HashString("h1.8xlarge");
+        static const int h1_16xlarge_HASH = HashingUtils::HashString("h1.16xlarge");
 
 
         InstanceType GetInstanceTypeForName(const Aws::String& name)
@@ -280,6 +295,26 @@ namespace Aws
           else if (hashCode == x1_32xlarge_HASH)
           {
             return InstanceType::x1_32xlarge;
+          }
+          else if (hashCode == x1e_xlarge_HASH)
+          {
+            return InstanceType::x1e_xlarge;
+          }
+          else if (hashCode == x1e_2xlarge_HASH)
+          {
+            return InstanceType::x1e_2xlarge;
+          }
+          else if (hashCode == x1e_4xlarge_HASH)
+          {
+            return InstanceType::x1e_4xlarge;
+          }
+          else if (hashCode == x1e_8xlarge_HASH)
+          {
+            return InstanceType::x1e_8xlarge;
+          }
+          else if (hashCode == x1e_16xlarge_HASH)
+          {
+            return InstanceType::x1e_16xlarge;
           }
           else if (hashCode == x1e_32xlarge_HASH)
           {
@@ -485,6 +520,46 @@ namespace Aws
           {
             return InstanceType::f1_16xlarge;
           }
+          else if (hashCode == m5_large_HASH)
+          {
+            return InstanceType::m5_large;
+          }
+          else if (hashCode == m5_xlarge_HASH)
+          {
+            return InstanceType::m5_xlarge;
+          }
+          else if (hashCode == m5_2xlarge_HASH)
+          {
+            return InstanceType::m5_2xlarge;
+          }
+          else if (hashCode == m5_4xlarge_HASH)
+          {
+            return InstanceType::m5_4xlarge;
+          }
+          else if (hashCode == m5_12xlarge_HASH)
+          {
+            return InstanceType::m5_12xlarge;
+          }
+          else if (hashCode == m5_24xlarge_HASH)
+          {
+            return InstanceType::m5_24xlarge;
+          }
+          else if (hashCode == h1_2xlarge_HASH)
+          {
+            return InstanceType::h1_2xlarge;
+          }
+          else if (hashCode == h1_4xlarge_HASH)
+          {
+            return InstanceType::h1_4xlarge;
+          }
+          else if (hashCode == h1_8xlarge_HASH)
+          {
+            return InstanceType::h1_8xlarge;
+          }
+          else if (hashCode == h1_16xlarge_HASH)
+          {
+            return InstanceType::h1_16xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -577,6 +652,16 @@ namespace Aws
             return "x1.16xlarge";
           case InstanceType::x1_32xlarge:
             return "x1.32xlarge";
+          case InstanceType::x1e_xlarge:
+            return "x1e.xlarge";
+          case InstanceType::x1e_2xlarge:
+            return "x1e.2xlarge";
+          case InstanceType::x1e_4xlarge:
+            return "x1e.4xlarge";
+          case InstanceType::x1e_8xlarge:
+            return "x1e.8xlarge";
+          case InstanceType::x1e_16xlarge:
+            return "x1e.16xlarge";
           case InstanceType::x1e_32xlarge:
             return "x1e.32xlarge";
           case InstanceType::i2_xlarge:
@@ -679,6 +764,26 @@ namespace Aws
             return "f1.2xlarge";
           case InstanceType::f1_16xlarge:
             return "f1.16xlarge";
+          case InstanceType::m5_large:
+            return "m5.large";
+          case InstanceType::m5_xlarge:
+            return "m5.xlarge";
+          case InstanceType::m5_2xlarge:
+            return "m5.2xlarge";
+          case InstanceType::m5_4xlarge:
+            return "m5.4xlarge";
+          case InstanceType::m5_12xlarge:
+            return "m5.12xlarge";
+          case InstanceType::m5_24xlarge:
+            return "m5.24xlarge";
+          case InstanceType::h1_2xlarge:
+            return "h1.2xlarge";
+          case InstanceType::h1_4xlarge:
+            return "h1.4xlarge";
+          case InstanceType::h1_8xlarge:
+            return "h1.8xlarge";
+          case InstanceType::h1_16xlarge:
+            return "h1.16xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
