@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Requests Amazon API Gateway to create a <a>Stage</a> resource.</p><p><h3>See
+   * <p>Requests API Gateway to create a <a>Stage</a> resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStageRequest">AWS
    * API Reference</a></p>
@@ -86,37 +86,37 @@ namespace Model
 
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
@@ -388,6 +388,91 @@ namespace Model
      */
     inline CreateStageRequest& WithCanarySettings(CanarySettings&& value) { SetCanarySettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline CreateStageRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline CreateStageRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline CreateStageRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline CreateStageRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline CreateStageRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline CreateStageRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline CreateStageRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline CreateStageRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can
+     * be up to 128 characters and must not start with "aws:". Tag value can be up to
+     * 256 characters.</p>
+     */
+    inline CreateStageRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_restApiId;
@@ -416,6 +501,9 @@ namespace Model
 
     CanarySettings m_canarySettings;
     bool m_canarySettingsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -130,43 +130,43 @@ namespace Model
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline Stage& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline Stage& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline Stage& WithStageName(const char* value) { SetStageName(value); return *this;}
 
@@ -538,6 +538,67 @@ namespace Model
 
 
     /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline Stage& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline Stage& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline Stage& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline Stage& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline Stage& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline Stage& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline Stage& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline Stage& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline Stage& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The timestamp when the stage was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
@@ -625,6 +686,9 @@ namespace Model
 
     CanarySettings m_canarySettings;
     bool m_canarySettingsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;

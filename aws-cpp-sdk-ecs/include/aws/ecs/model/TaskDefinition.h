@@ -200,49 +200,91 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this
-     * role.</p>
+     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
+     * ECS-optimized Windows AMI. Your containers must also run some configuration code
+     * in order to take advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
+     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
 
     /**
      * <p>The ARN of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this
-     * role.</p>
+     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
+     * ECS-optimized Windows AMI. Your containers must also run some configuration code
+     * in order to take advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
+     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
 
     /**
      * <p>The ARN of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this
-     * role.</p>
+     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
+     * ECS-optimized Windows AMI. Your containers must also run some configuration code
+     * in order to take advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
+     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this
-     * role.</p>
+     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
+     * ECS-optimized Windows AMI. Your containers must also run some configuration code
+     * in order to take advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
+     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
 
     /**
      * <p>The ARN of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this
-     * role.</p>
+     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
+     * ECS-optimized Windows AMI. Your containers must also run some configuration code
+     * in order to take advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
+     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskDefinition& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this
-     * role.</p>
+     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
+     * ECS-optimized Windows AMI. Your containers must also run some configuration code
+     * in order to take advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
+     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskDefinition& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this
-     * role.</p>
+     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
+     * ECS-optimized Windows AMI. Your containers must also run some configuration code
+     * in order to take advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
+     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskDefinition& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
 
@@ -309,11 +351,18 @@ namespace Model
      * the task is allocated an Elastic Network Interface, and you must specify a
      * <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
-     * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
+     * Guide</i>.</p> <note> <p>Currently, only the Amazon ECS-optimized AMI, other
+     * Amazon Linux variants with the <code>ecs-init</code> package, or AWS Fargate
+     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * the network mode is <code>host</code>, you can't run multiple instantiations of
+     * the same task on a single container instance when port mappings are used.</p>
+     * <p>Docker for Windows uses different network modes than Docker for Linux. When
+     * you register a task definition with Windows containers, you must not specify a
+     * network mode. If you use the console to register a task definition with Windows
+     * containers, you must choose the <code>&lt;default&gt;</code> network mode
+     * object. </p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -338,11 +387,18 @@ namespace Model
      * the task is allocated an Elastic Network Interface, and you must specify a
      * <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
-     * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
+     * Guide</i>.</p> <note> <p>Currently, only the Amazon ECS-optimized AMI, other
+     * Amazon Linux variants with the <code>ecs-init</code> package, or AWS Fargate
+     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * the network mode is <code>host</code>, you can't run multiple instantiations of
+     * the same task on a single container instance when port mappings are used.</p>
+     * <p>Docker for Windows uses different network modes than Docker for Linux. When
+     * you register a task definition with Windows containers, you must not specify a
+     * network mode. If you use the console to register a task definition with Windows
+     * containers, you must choose the <code>&lt;default&gt;</code> network mode
+     * object. </p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -367,11 +423,18 @@ namespace Model
      * the task is allocated an Elastic Network Interface, and you must specify a
      * <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
-     * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
+     * Guide</i>.</p> <note> <p>Currently, only the Amazon ECS-optimized AMI, other
+     * Amazon Linux variants with the <code>ecs-init</code> package, or AWS Fargate
+     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * the network mode is <code>host</code>, you can't run multiple instantiations of
+     * the same task on a single container instance when port mappings are used.</p>
+     * <p>Docker for Windows uses different network modes than Docker for Linux. When
+     * you register a task definition with Windows containers, you must not specify a
+     * network mode. If you use the console to register a task definition with Windows
+     * containers, you must choose the <code>&lt;default&gt;</code> network mode
+     * object. </p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -396,11 +459,18 @@ namespace Model
      * the task is allocated an Elastic Network Interface, and you must specify a
      * <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
-     * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
+     * Guide</i>.</p> <note> <p>Currently, only the Amazon ECS-optimized AMI, other
+     * Amazon Linux variants with the <code>ecs-init</code> package, or AWS Fargate
+     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * the network mode is <code>host</code>, you can't run multiple instantiations of
+     * the same task on a single container instance when port mappings are used.</p>
+     * <p>Docker for Windows uses different network modes than Docker for Linux. When
+     * you register a task definition with Windows containers, you must not specify a
+     * network mode. If you use the console to register a task definition with Windows
+     * containers, you must choose the <code>&lt;default&gt;</code> network mode
+     * object. </p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -425,11 +495,18 @@ namespace Model
      * the task is allocated an Elastic Network Interface, and you must specify a
      * <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
-     * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
+     * Guide</i>.</p> <note> <p>Currently, only the Amazon ECS-optimized AMI, other
+     * Amazon Linux variants with the <code>ecs-init</code> package, or AWS Fargate
+     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * the network mode is <code>host</code>, you can't run multiple instantiations of
+     * the same task on a single container instance when port mappings are used.</p>
+     * <p>Docker for Windows uses different network modes than Docker for Linux. When
+     * you register a task definition with Windows containers, you must not specify a
+     * network mode. If you use the console to register a task definition with Windows
+     * containers, you must choose the <code>&lt;default&gt;</code> network mode
+     * object. </p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -756,7 +833,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -772,7 +849,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -788,7 +865,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -804,7 +881,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -820,7 +897,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -836,7 +913,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -852,7 +929,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -868,7 +945,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -883,7 +960,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -898,7 +975,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -913,7 +990,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -928,7 +1005,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -943,7 +1020,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -958,7 +1035,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in

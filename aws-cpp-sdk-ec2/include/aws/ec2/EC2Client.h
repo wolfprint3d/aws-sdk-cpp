@@ -1346,9 +1346,9 @@ namespace Model
 
   /**
    * <fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute
-   * Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web
-   * Services (AWS) cloud. Using Amazon EC2 eliminates your need to invest in
-   * hardware up front, so you can develop and deploy applications faster.</p>
+   * Cloud (Amazon EC2) provides resizable computing capacity in the AWS Cloud. Using
+   * Amazon EC2 eliminates your need to invest in hardware up front, so you can
+   * develop and deploy applications faster.</p>
    */
   class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient
   {
@@ -1439,7 +1439,9 @@ namespace Model
          * <p>Accept a VPC peering connection request. To accept a request, the VPC peering
          * connection must be in the <code>pending-acceptance</code> state, and you must be
          * the owner of the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your
-         * outstanding VPC peering connection requests.</p><p><h3>See Also:</h3>   <a
+         * outstanding VPC peering connection requests.</p> <p>For an inter-region VPC
+         * peering connection request, you must accept the VPC peering connection in the
+         * region of the accepter VPC.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">AWS
          * API Reference</a></p>
          */
@@ -1449,7 +1451,9 @@ namespace Model
          * <p>Accept a VPC peering connection request. To accept a request, the VPC peering
          * connection must be in the <code>pending-acceptance</code> state, and you must be
          * the owner of the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your
-         * outstanding VPC peering connection requests.</p><p><h3>See Also:</h3>   <a
+         * outstanding VPC peering connection requests.</p> <p>For an inter-region VPC
+         * peering connection request, you must accept the VPC peering connection in the
+         * region of the accepter VPC.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">AWS
          * API Reference</a></p>
          *
@@ -1461,7 +1465,9 @@ namespace Model
          * <p>Accept a VPC peering connection request. To accept a request, the VPC peering
          * connection must be in the <code>pending-acceptance</code> state, and you must be
          * the owner of the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your
-         * outstanding VPC peering connection requests.</p><p><h3>See Also:</h3>   <a
+         * outstanding VPC peering connection requests.</p> <p>For an inter-region VPC
+         * peering connection request, you must accept the VPC peering connection in the
+         * region of the accepter VPC.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">AWS
          * API Reference</a></p>
          *
@@ -3752,24 +3758,30 @@ namespace Model
         virtual void CreateNetworkInterfacePermissionAsync(const Model::CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a placement group that you launch cluster instances into. Give the
-         * group a name that's unique within the scope of your account.</p> <p>For more
-         * information about placement groups and cluster instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a placement group in which to launch instances. The strategy of the
+         * placement group determines how the instances are organized within the group.
+         * </p> <p>A <code>cluster</code> placement group is a logical grouping of
+         * instances within a single Availability Zone that benefit from low network
+         * latency, high network throughput. A <code>spread</code> placement group places
+         * instances on distinct hardware.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePlacementGroupOutcome CreatePlacementGroup(const Model::CreatePlacementGroupRequest& request) const;
 
         /**
-         * <p>Creates a placement group that you launch cluster instances into. Give the
-         * group a name that's unique within the scope of your account.</p> <p>For more
-         * information about placement groups and cluster instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a placement group in which to launch instances. The strategy of the
+         * placement group determines how the instances are organized within the group.
+         * </p> <p>A <code>cluster</code> placement group is a logical grouping of
+         * instances within a single Availability Zone that benefit from low network
+         * latency, high network throughput. A <code>spread</code> placement group places
+         * instances on distinct hardware.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
          * API Reference</a></p>
          *
@@ -3778,12 +3790,15 @@ namespace Model
         virtual Model::CreatePlacementGroupOutcomeCallable CreatePlacementGroupCallable(const Model::CreatePlacementGroupRequest& request) const;
 
         /**
-         * <p>Creates a placement group that you launch cluster instances into. Give the
-         * group a name that's unique within the scope of your account.</p> <p>For more
-         * information about placement groups and cluster instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a placement group in which to launch instances. The strategy of the
+         * placement group determines how the instances are organized within the group.
+         * </p> <p>A <code>cluster</code> placement group is a logical grouping of
+         * instances within a single Availability Zone that benefit from low network
+         * latency, high network throughput. A <code>spread</code> placement group places
+         * instances on distinct hardware.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
          * API Reference</a></p>
          *
@@ -4679,14 +4694,18 @@ namespace Model
 
         /**
          * <p>Requests a VPC peering connection between two VPCs: a requester VPC that you
-         * own and a peer VPC with which to create the connection. The peer VPC can belong
-         * to another AWS account. The requester VPC and peer VPC cannot have overlapping
-         * CIDR blocks.</p> <p>The owner of the peer VPC must accept the peering request to
-         * activate the peering connection. The VPC peering connection request expires
-         * after 7 days, after which it cannot be accepted or rejected.</p> <p>If you try
-         * to create a VPC peering connection between VPCs that have overlapping CIDR
-         * blocks, the VPC peering connection status goes to
-         * <code>failed</code>.</p><p><h3>See Also:</h3>   <a
+         * own and an accepter VPC with which to create the connection. The accepter VPC
+         * can belong to another AWS account and can be in a different region to the
+         * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
+         * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
+         * For more information, see the <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+         * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
+         * accepter VPC must accept the peering request to activate the peering connection.
+         * The VPC peering connection request expires after 7 days, after which it cannot
+         * be accepted or rejected.</p> <p>If you create a VPC peering connection request
+         * between VPCs with overlapping CIDR blocks, the VPC peering connection has a
+         * status of <code>failed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">AWS
          * API Reference</a></p>
          */
@@ -4694,14 +4713,18 @@ namespace Model
 
         /**
          * <p>Requests a VPC peering connection between two VPCs: a requester VPC that you
-         * own and a peer VPC with which to create the connection. The peer VPC can belong
-         * to another AWS account. The requester VPC and peer VPC cannot have overlapping
-         * CIDR blocks.</p> <p>The owner of the peer VPC must accept the peering request to
-         * activate the peering connection. The VPC peering connection request expires
-         * after 7 days, after which it cannot be accepted or rejected.</p> <p>If you try
-         * to create a VPC peering connection between VPCs that have overlapping CIDR
-         * blocks, the VPC peering connection status goes to
-         * <code>failed</code>.</p><p><h3>See Also:</h3>   <a
+         * own and an accepter VPC with which to create the connection. The accepter VPC
+         * can belong to another AWS account and can be in a different region to the
+         * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
+         * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
+         * For more information, see the <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+         * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
+         * accepter VPC must accept the peering request to activate the peering connection.
+         * The VPC peering connection request expires after 7 days, after which it cannot
+         * be accepted or rejected.</p> <p>If you create a VPC peering connection request
+         * between VPCs with overlapping CIDR blocks, the VPC peering connection has a
+         * status of <code>failed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">AWS
          * API Reference</a></p>
          *
@@ -4711,14 +4734,18 @@ namespace Model
 
         /**
          * <p>Requests a VPC peering connection between two VPCs: a requester VPC that you
-         * own and a peer VPC with which to create the connection. The peer VPC can belong
-         * to another AWS account. The requester VPC and peer VPC cannot have overlapping
-         * CIDR blocks.</p> <p>The owner of the peer VPC must accept the peering request to
-         * activate the peering connection. The VPC peering connection request expires
-         * after 7 days, after which it cannot be accepted or rejected.</p> <p>If you try
-         * to create a VPC peering connection between VPCs that have overlapping CIDR
-         * blocks, the VPC peering connection status goes to
-         * <code>failed</code>.</p><p><h3>See Also:</h3>   <a
+         * own and an accepter VPC with which to create the connection. The accepter VPC
+         * can belong to another AWS account and can be in a different region to the
+         * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
+         * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
+         * For more information, see the <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+         * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
+         * accepter VPC must accept the peering request to activate the peering connection.
+         * The VPC peering connection request expires after 7 days, after which it cannot
+         * be accepted or rejected.</p> <p>If you create a VPC peering connection request
+         * between VPCs with overlapping CIDR blocks, the VPC peering connection has a
+         * status of <code>failed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">AWS
          * API Reference</a></p>
          *
@@ -5295,10 +5322,10 @@ namespace Model
         /**
          * <p>Deletes the specified placement group. You must terminate all instances in
          * the placement group before you can delete the placement group. For more
-         * information about placement groups and cluster instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
          * API Reference</a></p>
          */
@@ -5307,10 +5334,10 @@ namespace Model
         /**
          * <p>Deletes the specified placement group. You must terminate all instances in
          * the placement group before you can delete the placement group. For more
-         * information about placement groups and cluster instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
          * API Reference</a></p>
          *
@@ -5321,10 +5348,10 @@ namespace Model
         /**
          * <p>Deletes the specified placement group. You must terminate all instances in
          * the placement group before you can delete the placement group. For more
-         * information about placement groups and cluster instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
          * API Reference</a></p>
          *
@@ -5757,8 +5784,8 @@ namespace Model
 
         /**
          * <p>Deletes a VPC peering connection. Either the owner of the requester VPC or
-         * the owner of the peer VPC can delete the VPC peering connection if it's in the
-         * <code>active</code> state. The owner of the requester VPC can delete a VPC
+         * the owner of the accepter VPC can delete the VPC peering connection if it's in
+         * the <code>active</code> state. The owner of the requester VPC can delete a VPC
          * peering connection in the <code>pending-acceptance</code> state. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">AWS
@@ -5768,8 +5795,8 @@ namespace Model
 
         /**
          * <p>Deletes a VPC peering connection. Either the owner of the requester VPC or
-         * the owner of the peer VPC can delete the VPC peering connection if it's in the
-         * <code>active</code> state. The owner of the requester VPC can delete a VPC
+         * the owner of the accepter VPC can delete the VPC peering connection if it's in
+         * the <code>active</code> state. The owner of the requester VPC can delete a VPC
          * peering connection in the <code>pending-acceptance</code> state. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">AWS
@@ -5781,8 +5808,8 @@ namespace Model
 
         /**
          * <p>Deletes a VPC peering connection. Either the owner of the requester VPC or
-         * the owner of the peer VPC can delete the VPC peering connection if it's in the
-         * <code>active</code> state. The owner of the requester VPC can delete a VPC
+         * the owner of the accepter VPC can delete the VPC peering connection if it's in
+         * the <code>active</code> state. The owner of the requester VPC can delete a VPC
          * peering connection in the <code>pending-acceptance</code> state. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">AWS
@@ -7410,22 +7437,20 @@ namespace Model
         virtual void DescribeNetworkInterfacesAsync(const Model::DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your placement groups. For more information about
-         * placement groups and cluster instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your placement groups. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribePlacementGroupsOutcome DescribePlacementGroups(const Model::DescribePlacementGroupsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your placement groups. For more information about
-         * placement groups and cluster instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your placement groups. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
          * API Reference</a></p>
          *
@@ -7434,11 +7459,10 @@ namespace Model
         virtual Model::DescribePlacementGroupsOutcomeCallable DescribePlacementGroupsCallable(const Model::DescribePlacementGroupsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your placement groups. For more information about
-         * placement groups and cluster instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your placement groups. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
          * API Reference</a></p>
          *
@@ -11194,18 +11218,22 @@ namespace Model
         virtual void ModifyVpcEndpointServiceConfigurationAsync(const Model::ModifyVpcEndpointServiceConfigurationRequest& request, const ModifyVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the permissions for your VPC endpoint service. You can add or remove
-         * permissions for service consumers (IAM users, IAM roles, and AWS accounts) to
-         * discover your endpoint service.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the permissions for your <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * endpoint service</a>. You can add or remove permissions for service consumers
+         * (IAM users, IAM roles, and AWS accounts) to connect to your endpoint
+         * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyVpcEndpointServicePermissionsOutcome ModifyVpcEndpointServicePermissions(const Model::ModifyVpcEndpointServicePermissionsRequest& request) const;
 
         /**
-         * <p>Modifies the permissions for your VPC endpoint service. You can add or remove
-         * permissions for service consumers (IAM users, IAM roles, and AWS accounts) to
-         * discover your endpoint service.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the permissions for your <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * endpoint service</a>. You can add or remove permissions for service consumers
+         * (IAM users, IAM roles, and AWS accounts) to connect to your endpoint
+         * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">AWS
          * API Reference</a></p>
          *
@@ -11214,9 +11242,11 @@ namespace Model
         virtual Model::ModifyVpcEndpointServicePermissionsOutcomeCallable ModifyVpcEndpointServicePermissionsCallable(const Model::ModifyVpcEndpointServicePermissionsRequest& request) const;
 
         /**
-         * <p>Modifies the permissions for your VPC endpoint service. You can add or remove
-         * permissions for service consumers (IAM users, IAM roles, and AWS accounts) to
-         * discover your endpoint service.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the permissions for your <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * endpoint service</a>. You can add or remove permissions for service consumers
+         * (IAM users, IAM roles, and AWS accounts) to connect to your endpoint
+         * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">AWS
          * API Reference</a></p>
          *
@@ -11933,8 +11963,8 @@ namespace Model
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information about network ACLs, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
-         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>This is
+         * an idempotent operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">AWS
          * API Reference</a></p>
          */
@@ -11945,8 +11975,8 @@ namespace Model
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information about network ACLs, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
-         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>This is
+         * an idempotent operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">AWS
          * API Reference</a></p>
          *
@@ -11959,8 +11989,8 @@ namespace Model
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information about network ACLs, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
-         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>This is
+         * an idempotent operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">AWS
          * API Reference</a></p>
          *

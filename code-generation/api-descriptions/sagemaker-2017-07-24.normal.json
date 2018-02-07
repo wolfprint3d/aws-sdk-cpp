@@ -60,7 +60,7 @@
       "errors":[
         {"shape":"ResourceLimitExceeded"}
       ],
-      "documentation":"<p>Creates a model in Amazon SageMaker. In the request, you name the model and describe one or more containers. For each container, you specify the docker image containing inference code, artifacts (from prior training), and custom environment map that the inference code uses when you deploy the model into production. </p> <p>Use this API to create a model only if you want to use Amazon SageMaker hosting services. To host your model, you create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then create an endpoint with the <code>CreateEndpoint</code> API. </p> <p>Amazon SageMaker then deploys all of the containers that you defined for the model in the hosting environment. </p> <p>In the <code>CreateModel</code> request, you must define at least one container with the <code>PrimaryContainer</code> parameter. You can optionally specify additional containers with the <code>SupplementalContainers</code> parameter. </p> <p>In the request, you also provide an IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute hosting instances. In addition, you also use the IAM role to manage permissions the inference code needs. For example, if the inference code access any other AWS resources, you grant necessary permissions via this role.</p>"
+      "documentation":"<p>Creates a model in Amazon SageMaker. In the request, you name the model and describe one or more containers. For each container, you specify the docker image containing inference code, artifacts (from prior training), and custom environment map that the inference code uses when you deploy the model into production. </p> <p>Use this API to create a model only if you want to use Amazon SageMaker hosting services. To host your model, you create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then create an endpoint with the <code>CreateEndpoint</code> API. </p> <p>Amazon SageMaker then deploys all of the containers that you defined for the model in the hosting environment. </p> <p>In the <code>CreateModel</code> request, you must define a container with the <code>PrimaryContainer</code> parameter. </p> <p>In the request, you also provide an IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute hosting instances. In addition, you also use the IAM role to manage permissions the inference code needs. For example, if the inference code access any other AWS resources, you grant necessary permissions via this role.</p>"
     },
     "CreateNotebookInstance":{
       "name":"CreateNotebookInstance",
@@ -268,7 +268,7 @@
       "errors":[
         {"shape":"ResourceLimitExceeded"}
       ],
-      "documentation":"<p>Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume. After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to <code>InService</code>. A notebook instance's status must be <code>InService</code> (is this same as \"Running\" in the console?) before you can connect to your Jupyter notebook. </p>"
+      "documentation":"<p>Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume. After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to your Jupyter notebook. </p>"
     },
     "StopNotebookInstance":{
       "name":"StopNotebookInstance",
@@ -315,7 +315,7 @@
       "errors":[
         {"shape":"ResourceLimitExceeded"}
       ],
-      "documentation":"<p>Updates variant weight, capacity, or both of one or more variants associated with an endpoint. This operation updates weight, capacity, or both for the previously provisioned endpoint. When it receives the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html\">DescribeEndpoint</a> API. </p>"
+      "documentation":"<p>Updates variant weight of one or more variants associated with an existing endpoint, or capacity of one variant associated with an existing endpoint. When it receives the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html\">DescribeEndpoint</a> API. </p>"
     },
     "UpdateNotebookInstance":{
       "name":"UpdateNotebookInstance",
@@ -446,11 +446,6 @@
       },
       "documentation":"<p>Describes the container, as part of model definition.</p>"
     },
-    "ContainerDefinitionList":{
-      "type":"list",
-      "member":{"shape":"ContainerDefinition"},
-      "max":5
-    },
     "ContainerHostname":{
       "type":"string",
       "max":63,
@@ -478,6 +473,10 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>An array of key-value pairs. For more information, see <a href=\"http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what\">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>"
+        },
+        "KmsKeyId":{
+          "shape":"KmsKeyId",
+          "documentation":"<p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>"
         }
       }
     },
@@ -526,7 +525,8 @@
       "type":"structure",
       "required":[
         "ModelName",
-        "PrimaryContainer"
+        "PrimaryContainer",
+        "ExecutionRoleArn"
       ],
       "members":{
         "ModelName":{
@@ -536,10 +536,6 @@
         "PrimaryContainer":{
           "shape":"ContainerDefinition",
           "documentation":"<p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed into production. </p>"
-        },
-        "SupplementalContainers":{
-          "shape":"ContainerDefinitionList",
-          "documentation":"<p>The additional optional containers to deploy.</p>"
         },
         "ExecutionRoleArn":{
           "shape":"RoleArn",
@@ -796,6 +792,10 @@
           "shape":"ProductionVariantList",
           "documentation":"<p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>"
         },
+        "KmsKeyId":{
+          "shape":"KmsKeyId",
+          "documentation":"<p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>"
+        },
         "CreationTime":{
           "shape":"Timestamp",
           "documentation":"<p>A timestamp that shows when the endpoint configuration was created.</p>"
@@ -872,7 +872,6 @@
       "required":[
         "ModelName",
         "PrimaryContainer",
-        "SupplementalContainers",
         "ExecutionRoleArn",
         "CreationTime",
         "ModelArn"
@@ -885,10 +884,6 @@
         "PrimaryContainer":{
           "shape":"ContainerDefinition",
           "documentation":"<p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>"
-        },
-        "SupplementalContainers":{
-          "shape":"ContainerDefinitionList",
-          "documentation":"<p>The description of additional optional containers that you defined when creating the model.</p>"
         },
         "ExecutionRoleArn":{
           "shape":"RoleArn",
@@ -1873,6 +1868,10 @@
         "VolumeSizeInGB":{
           "shape":"VolumeSizeInGB",
           "documentation":"<p>The size of the ML storage volume that you want to provision. </p> <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>You must specify sufficient ML storage for your scenario. </p> <note> <p> Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p> </note>"
+        },
+        "VolumeKmsKeyId":{
+          "shape":"KmsKeyId",
+          "documentation":"<p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p>"
         }
       },
       "documentation":"<p>Describes the resources, including ML compute instances and ML storage volumes, to use for model training. </p>"

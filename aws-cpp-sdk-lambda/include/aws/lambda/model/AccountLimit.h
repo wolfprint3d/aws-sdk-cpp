@@ -132,6 +132,28 @@ namespace Model
      */
     inline AccountLimit& WithConcurrentExecutions(int value) { SetConcurrentExecutions(value); return *this;}
 
+
+    /**
+     * <p>The number of concurrent executions available to functions that do not have
+     * concurrency limits set. For more information, see
+     * <a>concurrent-executions</a>.</p>
+     */
+    inline int GetUnreservedConcurrentExecutions() const{ return m_unreservedConcurrentExecutions; }
+
+    /**
+     * <p>The number of concurrent executions available to functions that do not have
+     * concurrency limits set. For more information, see
+     * <a>concurrent-executions</a>.</p>
+     */
+    inline void SetUnreservedConcurrentExecutions(int value) { m_unreservedConcurrentExecutionsHasBeenSet = true; m_unreservedConcurrentExecutions = value; }
+
+    /**
+     * <p>The number of concurrent executions available to functions that do not have
+     * concurrency limits set. For more information, see
+     * <a>concurrent-executions</a>.</p>
+     */
+    inline AccountLimit& WithUnreservedConcurrentExecutions(int value) { SetUnreservedConcurrentExecutions(value); return *this;}
+
   private:
 
     long long m_totalCodeSize;
@@ -145,6 +167,9 @@ namespace Model
 
     int m_concurrentExecutions;
     bool m_concurrentExecutionsHasBeenSet;
+
+    int m_unreservedConcurrentExecutions;
+    bool m_unreservedConcurrentExecutionsHasBeenSet;
   };
 
 } // namespace Model

@@ -18,6 +18,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/CloudwatchLogsExportConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -101,113 +102,32 @@ namespace Model
 
 
     /**
-     * <p> The new storage capacity of the RDS instance. Changing this setting does not
-     * result in an outage and the change is applied during the next maintenance window
-     * unless <code>ApplyImmediately</code> is set to <code>true</code> for this
-     * request. </p> <p> <b>MySQL</b> </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: 5-6144</p> <p>Constraints: Value supplied must be at least 10%
-     * greater than the current value. Values that are not at least 10% greater than
-     * the existing value are rounded up so that they are 10% greater than the current
-     * value.</p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>Default: Uses
-     * existing setting</p> <p>Valid Values: 5-6144</p> <p>Constraints: Value supplied
-     * must be at least 10% greater than the current value. Values that are not at
-     * least 10% greater than the existing value are rounded up so that they are 10%
-     * greater than the current value.</p> <p>Type: Integer</p> <p> <b>PostgreSQL</b>
-     * </p> <p>Default: Uses existing setting</p> <p>Valid Values: 5-6144</p>
-     * <p>Constraints: Value supplied must be at least 10% greater than the current
-     * value. Values that are not at least 10% greater than the existing value are
-     * rounded up so that they are 10% greater than the current value.</p> <p>Type:
-     * Integer</p> <p> <b>Oracle</b> </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: 10-6144</p> <p>Constraints: Value supplied must be at least 10%
-     * greater than the current value. Values that are not at least 10% greater than
-     * the existing value are rounded up so that they are 10% greater than the current
-     * value.</p> <p> <b>SQL Server</b> </p> <p>Cannot be modified.</p> <p>If you
-     * choose to migrate your DB instance from using standard storage to using
-     * Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the
-     * process can take time. The duration of the migration depends on several factors
-     * such as database load, storage size, storage type (standard or Provisioned
-     * IOPS), amount of IOPS provisioned (if any), and the number of prior scale
-     * storage operations. Typical migration times are under 24 hours, but the process
-     * can take up to several days in some cases. During the migration, the DB instance
-     * is available for use, but might experience performance degradation. While the
-     * migration takes place, nightly backups for the instance are suspended. No other
-     * Amazon RDS operations can take place for the instance, including modifying the
-     * instance, rebooting the instance, deleting the instance, creating a Read Replica
-     * for the instance, and creating a DB snapshot of the instance.</p>
+     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
+     * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
+     * at least 10% greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10% greater than
+     * the current value. </p> <p>For the valid values for allocated storage for each
+     * engine, see <a>CreateDBInstance</a>. </p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p> The new storage capacity of the RDS instance. Changing this setting does not
-     * result in an outage and the change is applied during the next maintenance window
-     * unless <code>ApplyImmediately</code> is set to <code>true</code> for this
-     * request. </p> <p> <b>MySQL</b> </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: 5-6144</p> <p>Constraints: Value supplied must be at least 10%
-     * greater than the current value. Values that are not at least 10% greater than
-     * the existing value are rounded up so that they are 10% greater than the current
-     * value.</p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>Default: Uses
-     * existing setting</p> <p>Valid Values: 5-6144</p> <p>Constraints: Value supplied
-     * must be at least 10% greater than the current value. Values that are not at
-     * least 10% greater than the existing value are rounded up so that they are 10%
-     * greater than the current value.</p> <p>Type: Integer</p> <p> <b>PostgreSQL</b>
-     * </p> <p>Default: Uses existing setting</p> <p>Valid Values: 5-6144</p>
-     * <p>Constraints: Value supplied must be at least 10% greater than the current
-     * value. Values that are not at least 10% greater than the existing value are
-     * rounded up so that they are 10% greater than the current value.</p> <p>Type:
-     * Integer</p> <p> <b>Oracle</b> </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: 10-6144</p> <p>Constraints: Value supplied must be at least 10%
-     * greater than the current value. Values that are not at least 10% greater than
-     * the existing value are rounded up so that they are 10% greater than the current
-     * value.</p> <p> <b>SQL Server</b> </p> <p>Cannot be modified.</p> <p>If you
-     * choose to migrate your DB instance from using standard storage to using
-     * Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the
-     * process can take time. The duration of the migration depends on several factors
-     * such as database load, storage size, storage type (standard or Provisioned
-     * IOPS), amount of IOPS provisioned (if any), and the number of prior scale
-     * storage operations. Typical migration times are under 24 hours, but the process
-     * can take up to several days in some cases. During the migration, the DB instance
-     * is available for use, but might experience performance degradation. While the
-     * migration takes place, nightly backups for the instance are suspended. No other
-     * Amazon RDS operations can take place for the instance, including modifying the
-     * instance, rebooting the instance, deleting the instance, creating a Read Replica
-     * for the instance, and creating a DB snapshot of the instance.</p>
+     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
+     * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
+     * at least 10% greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10% greater than
+     * the current value. </p> <p>For the valid values for allocated storage for each
+     * engine, see <a>CreateDBInstance</a>. </p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p> The new storage capacity of the RDS instance. Changing this setting does not
-     * result in an outage and the change is applied during the next maintenance window
-     * unless <code>ApplyImmediately</code> is set to <code>true</code> for this
-     * request. </p> <p> <b>MySQL</b> </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: 5-6144</p> <p>Constraints: Value supplied must be at least 10%
-     * greater than the current value. Values that are not at least 10% greater than
-     * the existing value are rounded up so that they are 10% greater than the current
-     * value.</p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>Default: Uses
-     * existing setting</p> <p>Valid Values: 5-6144</p> <p>Constraints: Value supplied
-     * must be at least 10% greater than the current value. Values that are not at
-     * least 10% greater than the existing value are rounded up so that they are 10%
-     * greater than the current value.</p> <p>Type: Integer</p> <p> <b>PostgreSQL</b>
-     * </p> <p>Default: Uses existing setting</p> <p>Valid Values: 5-6144</p>
-     * <p>Constraints: Value supplied must be at least 10% greater than the current
-     * value. Values that are not at least 10% greater than the existing value are
-     * rounded up so that they are 10% greater than the current value.</p> <p>Type:
-     * Integer</p> <p> <b>Oracle</b> </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: 10-6144</p> <p>Constraints: Value supplied must be at least 10%
-     * greater than the current value. Values that are not at least 10% greater than
-     * the existing value are rounded up so that they are 10% greater than the current
-     * value.</p> <p> <b>SQL Server</b> </p> <p>Cannot be modified.</p> <p>If you
-     * choose to migrate your DB instance from using standard storage to using
-     * Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the
-     * process can take time. The duration of the migration depends on several factors
-     * such as database load, storage size, storage type (standard or Provisioned
-     * IOPS), amount of IOPS provisioned (if any), and the number of prior scale
-     * storage operations. Typical migration times are under 24 hours, but the process
-     * can take up to several days in some cases. During the migration, the DB instance
-     * is available for use, but might experience performance degradation. While the
-     * migration takes place, nightly backups for the instance are suspended. No other
-     * Amazon RDS operations can take place for the instance, including modifying the
-     * instance, rebooting the instance, deleting the instance, creating a Read Replica
-     * for the instance, and creating a DB snapshot of the instance.</p>
+     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
+     * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
+     * at least 10% greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10% greater than
+     * the current value. </p> <p>For the valid values for allocated storage for each
+     * engine, see <a>CreateDBInstance</a>. </p>
      */
     inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -1119,29 +1039,26 @@ namespace Model
 
 
     /**
-     * <p> Specifies if the DB instance is a Multi-AZ deployment. Changing this
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica.</p>
+     * <code>true</code> for this request. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p> Specifies if the DB instance is a Multi-AZ deployment. Changing this
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica.</p>
+     * <code>true</code> for this request. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p> Specifies if the DB instance is a Multi-AZ deployment. Changing this
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica.</p>
+     * <code>true</code> for this request. </p>
      */
     inline ModifyDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -1348,20 +1265,15 @@ namespace Model
 
 
     /**
-     * <p> The new Provisioned IOPS (I/O operations per second) value for the RDS
-     * instance. Changing this setting does not result in an outage and the change is
-     * applied during the next maintenance window unless the
+     * <p>The new Provisioned IOPS (I/O operations per second) value for the RDS
+     * instance. </p> <p>Changing this setting does not result in an outage and the
+     * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p> <p>Constraints: Value
-     * supplied must be at least 10% greater than the current value. Values that are
-     * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. If you are migrating from Provisioned IOPS
-     * to standard storage, set this value to 0. The DB instance will require a reboot
-     * for the change in storage type to take effect.</p> <p> <b>SQL Server</b> </p>
-     * <p>Setting the IOPS value for the SQL Server database engine is not
-     * supported.</p> <p>Type: Integer</p> <p>If you choose to migrate your DB instance
-     * from using standard storage to using Provisioned IOPS, or from using Provisioned
-     * IOPS to using standard storage, the process can take time. The duration of the
+     * request. If you are migrating from Provisioned IOPS to standard storage, set
+     * this value to 0. The DB instance will require a reboot for the change in storage
+     * type to take effect. </p> <p>If you choose to migrate your DB instance from
+     * using standard storage to using Provisioned IOPS, or from using Provisioned IOPS
+     * to using standard storage, the process can take time. The duration of the
      * migration depends on several factors such as database load, storage size,
      * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
      * any), and the number of prior scale storage operations. Typical migration times
@@ -1371,25 +1283,24 @@ namespace Model
      * the instance are suspended. No other Amazon RDS operations can take place for
      * the instance, including modifying the instance, rebooting the instance, deleting
      * the instance, creating a Read Replica for the instance, and creating a DB
-     * snapshot of the instance.</p>
+     * snapshot of the instance. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and
+     * PostgreSQL, the value supplied must be at least 10% greater than the current
+     * value. Values that are not at least 10% greater than the existing value are
+     * rounded up so that they are 10% greater than the current value. </p> <p>Default:
+     * Uses existing setting</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p> The new Provisioned IOPS (I/O operations per second) value for the RDS
-     * instance. Changing this setting does not result in an outage and the change is
-     * applied during the next maintenance window unless the
+     * <p>The new Provisioned IOPS (I/O operations per second) value for the RDS
+     * instance. </p> <p>Changing this setting does not result in an outage and the
+     * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p> <p>Constraints: Value
-     * supplied must be at least 10% greater than the current value. Values that are
-     * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. If you are migrating from Provisioned IOPS
-     * to standard storage, set this value to 0. The DB instance will require a reboot
-     * for the change in storage type to take effect.</p> <p> <b>SQL Server</b> </p>
-     * <p>Setting the IOPS value for the SQL Server database engine is not
-     * supported.</p> <p>Type: Integer</p> <p>If you choose to migrate your DB instance
-     * from using standard storage to using Provisioned IOPS, or from using Provisioned
-     * IOPS to using standard storage, the process can take time. The duration of the
+     * request. If you are migrating from Provisioned IOPS to standard storage, set
+     * this value to 0. The DB instance will require a reboot for the change in storage
+     * type to take effect. </p> <p>If you choose to migrate your DB instance from
+     * using standard storage to using Provisioned IOPS, or from using Provisioned IOPS
+     * to using standard storage, the process can take time. The duration of the
      * migration depends on several factors such as database load, storage size,
      * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
      * any), and the number of prior scale storage operations. Typical migration times
@@ -1399,25 +1310,24 @@ namespace Model
      * the instance are suspended. No other Amazon RDS operations can take place for
      * the instance, including modifying the instance, rebooting the instance, deleting
      * the instance, creating a Read Replica for the instance, and creating a DB
-     * snapshot of the instance.</p>
+     * snapshot of the instance. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and
+     * PostgreSQL, the value supplied must be at least 10% greater than the current
+     * value. Values that are not at least 10% greater than the existing value are
+     * rounded up so that they are 10% greater than the current value. </p> <p>Default:
+     * Uses existing setting</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p> The new Provisioned IOPS (I/O operations per second) value for the RDS
-     * instance. Changing this setting does not result in an outage and the change is
-     * applied during the next maintenance window unless the
+     * <p>The new Provisioned IOPS (I/O operations per second) value for the RDS
+     * instance. </p> <p>Changing this setting does not result in an outage and the
+     * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p> <p>Constraints: Value
-     * supplied must be at least 10% greater than the current value. Values that are
-     * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. If you are migrating from Provisioned IOPS
-     * to standard storage, set this value to 0. The DB instance will require a reboot
-     * for the change in storage type to take effect.</p> <p> <b>SQL Server</b> </p>
-     * <p>Setting the IOPS value for the SQL Server database engine is not
-     * supported.</p> <p>Type: Integer</p> <p>If you choose to migrate your DB instance
-     * from using standard storage to using Provisioned IOPS, or from using Provisioned
-     * IOPS to using standard storage, the process can take time. The duration of the
+     * request. If you are migrating from Provisioned IOPS to standard storage, set
+     * this value to 0. The DB instance will require a reboot for the change in storage
+     * type to take effect. </p> <p>If you choose to migrate your DB instance from
+     * using standard storage to using Provisioned IOPS, or from using Provisioned IOPS
+     * to using standard storage, the process can take time. The duration of the
      * migration depends on several factors such as database load, storage size,
      * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
      * any), and the number of prior scale storage operations. Typical migration times
@@ -1427,7 +1337,11 @@ namespace Model
      * the instance are suspended. No other Amazon RDS operations can take place for
      * the instance, including modifying the instance, rebooting the instance, deleting
      * the instance, creating a Read Replica for the instance, and creating a DB
-     * snapshot of the instance.</p>
+     * snapshot of the instance. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and
+     * PostgreSQL, the value supplied must be at least 10% greater than the current
+     * value. Values that are not at least 10% greater than the existing value are
+     * rounded up so that they are 10% greater than the current value. </p> <p>Default:
+     * Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -1624,65 +1538,149 @@ namespace Model
 
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
+     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time. The
+     * duration of the migration depends on several factors such as database load,
+     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
+     * provisioned (if any), and the number of prior scale storage operations. Typical
+     * migration times are under 24 hours, but the process can take up to several days
+     * in some cases. During the migration, the DB instance is available for use, but
+     * might experience performance degradation. While the migration takes place,
+     * nightly backups for the instance are suspended. No other Amazon RDS operations
+     * can take place for the instance, including modifying the instance, rebooting the
+     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified, otherwise <code>standard</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
+     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time. The
+     * duration of the migration depends on several factors such as database load,
+     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
+     * provisioned (if any), and the number of prior scale storage operations. Typical
+     * migration times are under 24 hours, but the process can take up to several days
+     * in some cases. During the migration, the DB instance is available for use, but
+     * might experience performance degradation. While the migration takes place,
+     * nightly backups for the instance are suspended. No other Amazon RDS operations
+     * can take place for the instance, including modifying the instance, rebooting the
+     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
+     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time. The
+     * duration of the migration depends on several factors such as database load,
+     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
+     * provisioned (if any), and the number of prior scale storage operations. Typical
+     * migration times are under 24 hours, but the process can take up to several days
+     * in some cases. During the migration, the DB instance is available for use, but
+     * might experience performance degradation. While the migration takes place,
+     * nightly backups for the instance are suspended. No other Amazon RDS operations
+     * can take place for the instance, including modifying the instance, rebooting the
+     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
+     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time. The
+     * duration of the migration depends on several factors such as database load,
+     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
+     * provisioned (if any), and the number of prior scale storage operations. Typical
+     * migration times are under 24 hours, but the process can take up to several days
+     * in some cases. During the migration, the DB instance is available for use, but
+     * might experience performance degradation. While the migration takes place,
+     * nightly backups for the instance are suspended. No other Amazon RDS operations
+     * can take place for the instance, including modifying the instance, rebooting the
+     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
+     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time. The
+     * duration of the migration depends on several factors such as database load,
+     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
+     * provisioned (if any), and the number of prior scale storage operations. Typical
+     * migration times are under 24 hours, but the process can take up to several days
+     * in some cases. During the migration, the DB instance is available for use, but
+     * might experience performance degradation. While the migration takes place,
+     * nightly backups for the instance are suspended. No other Amazon RDS operations
+     * can take place for the instance, including modifying the instance, rebooting the
+     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified, otherwise <code>standard</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
+     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time. The
+     * duration of the migration depends on several factors such as database load,
+     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
+     * provisioned (if any), and the number of prior scale storage operations. Typical
+     * migration times are under 24 hours, but the process can take up to several days
+     * in some cases. During the migration, the DB instance is available for use, but
+     * might experience performance degradation. While the migration takes place,
+     * nightly backups for the instance are suspended. No other Amazon RDS operations
+     * can take place for the instance, including modifying the instance, rebooting the
+     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified, otherwise <code>standard</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
+     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time. The
+     * duration of the migration depends on several factors such as database load,
+     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
+     * provisioned (if any), and the number of prior scale storage operations. Typical
+     * migration times are under 24 hours, but the process can take up to several days
+     * in some cases. During the migration, the DB instance is available for use, but
+     * might experience performance degradation. While the migration takes place,
+     * nightly backups for the instance are suspended. No other Amazon RDS operations
+     * can take place for the instance, including modifying the instance, rebooting the
+     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified, otherwise <code>standard</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -2281,6 +2279,37 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     */
+    inline const CloudwatchLogsExportConfiguration& GetCloudwatchLogsExportConfiguration() const{ return m_cloudwatchLogsExportConfiguration; }
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     */
+    inline void SetCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = value; }
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     */
+    inline void SetCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     */
+    inline ModifyDBInstanceRequest& WithCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { SetCloudwatchLogsExportConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     */
+    inline ModifyDBInstanceRequest& WithCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { SetCloudwatchLogsExportConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -2387,6 +2416,9 @@ namespace Model
 
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet;
+
+    CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
+    bool m_cloudwatchLogsExportConfigurationHasBeenSet;
   };
 
 } // namespace Model

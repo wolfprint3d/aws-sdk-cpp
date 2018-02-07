@@ -251,7 +251,10 @@ namespace Model
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
      * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
+     * port mappings are used.</p> <p>Docker for Windows uses different network modes
+     * than Docker for Linux. When you register a task definition with Windows
+     * containers, you must not specify a network mode.</p> <p>For more information,
+     * see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -280,7 +283,10 @@ namespace Model
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
      * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
+     * port mappings are used.</p> <p>Docker for Windows uses different network modes
+     * than Docker for Linux. When you register a task definition with Windows
+     * containers, you must not specify a network mode.</p> <p>For more information,
+     * see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -309,7 +315,10 @@ namespace Model
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
      * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
+     * port mappings are used.</p> <p>Docker for Windows uses different network modes
+     * than Docker for Linux. When you register a task definition with Windows
+     * containers, you must not specify a network mode.</p> <p>For more information,
+     * see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -338,7 +347,10 @@ namespace Model
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
      * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
+     * port mappings are used.</p> <p>Docker for Windows uses different network modes
+     * than Docker for Linux. When you register a task definition with Windows
+     * containers, you must not specify a network mode.</p> <p>For more information,
+     * see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -367,7 +379,10 @@ namespace Model
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
      * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
+     * port mappings are used.</p> <p>Docker for Windows uses different network modes
+     * than Docker for Linux. When you register a task definition with Windows
+     * containers, you must not specify a network mode.</p> <p>For more information,
+     * see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -555,15 +570,17 @@ namespace Model
 
     /**
      * <p>The number of <code>cpu</code> units used by the task. If using the EC2
-     * launch type, this field is optional and any value can be used. If you are using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
-     * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
-     * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
-     * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
+     * launch type, this field is optional and any value can be used.</p> <note>
+     * <p>Task-level CPU and memory parameters are ignored for Windows containers. We
+     * recommend specifying container-level resources for Windows containers.</p>
+     * </note> <p>If you are using the Fargate launch type, this field is required and
+     * you must use one of the following values, which determines your range of valid
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5
+     * vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li>
+     * <p>1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB,
+     * 6GB, 7GB, 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
      * Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments</p>
      * </li> </ul>
      */
@@ -571,15 +588,17 @@ namespace Model
 
     /**
      * <p>The number of <code>cpu</code> units used by the task. If using the EC2
-     * launch type, this field is optional and any value can be used. If you are using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
-     * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
-     * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
-     * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
+     * launch type, this field is optional and any value can be used.</p> <note>
+     * <p>Task-level CPU and memory parameters are ignored for Windows containers. We
+     * recommend specifying container-level resources for Windows containers.</p>
+     * </note> <p>If you are using the Fargate launch type, this field is required and
+     * you must use one of the following values, which determines your range of valid
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5
+     * vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li>
+     * <p>1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB,
+     * 6GB, 7GB, 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
      * Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments</p>
      * </li> </ul>
      */
@@ -587,15 +606,17 @@ namespace Model
 
     /**
      * <p>The number of <code>cpu</code> units used by the task. If using the EC2
-     * launch type, this field is optional and any value can be used. If you are using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
-     * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
-     * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
-     * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
+     * launch type, this field is optional and any value can be used.</p> <note>
+     * <p>Task-level CPU and memory parameters are ignored for Windows containers. We
+     * recommend specifying container-level resources for Windows containers.</p>
+     * </note> <p>If you are using the Fargate launch type, this field is required and
+     * you must use one of the following values, which determines your range of valid
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5
+     * vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li>
+     * <p>1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB,
+     * 6GB, 7GB, 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
      * Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments</p>
      * </li> </ul>
      */
@@ -603,15 +624,17 @@ namespace Model
 
     /**
      * <p>The number of <code>cpu</code> units used by the task. If using the EC2
-     * launch type, this field is optional and any value can be used. If you are using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
-     * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
-     * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
-     * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
+     * launch type, this field is optional and any value can be used.</p> <note>
+     * <p>Task-level CPU and memory parameters are ignored for Windows containers. We
+     * recommend specifying container-level resources for Windows containers.</p>
+     * </note> <p>If you are using the Fargate launch type, this field is required and
+     * you must use one of the following values, which determines your range of valid
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5
+     * vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li>
+     * <p>1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB,
+     * 6GB, 7GB, 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
      * Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments</p>
      * </li> </ul>
      */
@@ -619,15 +642,17 @@ namespace Model
 
     /**
      * <p>The number of <code>cpu</code> units used by the task. If using the EC2
-     * launch type, this field is optional and any value can be used. If you are using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
-     * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
-     * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
-     * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
+     * launch type, this field is optional and any value can be used.</p> <note>
+     * <p>Task-level CPU and memory parameters are ignored for Windows containers. We
+     * recommend specifying container-level resources for Windows containers.</p>
+     * </note> <p>If you are using the Fargate launch type, this field is required and
+     * you must use one of the following values, which determines your range of valid
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5
+     * vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li>
+     * <p>1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB,
+     * 6GB, 7GB, 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
      * Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments</p>
      * </li> </ul>
      */
@@ -635,15 +660,17 @@ namespace Model
 
     /**
      * <p>The number of <code>cpu</code> units used by the task. If using the EC2
-     * launch type, this field is optional and any value can be used. If you are using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
-     * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
-     * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
-     * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
+     * launch type, this field is optional and any value can be used.</p> <note>
+     * <p>Task-level CPU and memory parameters are ignored for Windows containers. We
+     * recommend specifying container-level resources for Windows containers.</p>
+     * </note> <p>If you are using the Fargate launch type, this field is required and
+     * you must use one of the following values, which determines your range of valid
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5
+     * vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li>
+     * <p>1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB,
+     * 6GB, 7GB, 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
      * Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments</p>
      * </li> </ul>
      */
@@ -651,15 +678,17 @@ namespace Model
 
     /**
      * <p>The number of <code>cpu</code> units used by the task. If using the EC2
-     * launch type, this field is optional and any value can be used. If you are using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
-     * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
-     * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
-     * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
+     * launch type, this field is optional and any value can be used.</p> <note>
+     * <p>Task-level CPU and memory parameters are ignored for Windows containers. We
+     * recommend specifying container-level resources for Windows containers.</p>
+     * </note> <p>If you are using the Fargate launch type, this field is required and
+     * you must use one of the following values, which determines your range of valid
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5
+     * vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li>
+     * <p>1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB,
+     * 6GB, 7GB, 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4GB and 16GB in 1GB increments</p> </li> <li> <p>4096 (4 vCPU) -
      * Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments</p>
      * </li> </ul>
      */
@@ -668,106 +697,127 @@ namespace Model
 
     /**
      * <p>The amount (in MiB) of memory used by the task. If using the EC2 launch type,
-     * this field is optional and any value can be used. If you are using the Fargate
-     * launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code>
-     * parameter:</p> <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values:
-     * 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB
-     * and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2
-     * vCPU)</p> </li> <li> <p>Between 8GB and 30GB in 1GB increments - Available
-     * <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * this field is optional and any value can be used.</p> <note> <p>Task-level CPU
+     * and memory parameters are ignored for Windows containers. We recommend
+     * specifying container-level resources for Windows containers.</p> </note> <p>If
+     * you are using the Fargate launch type, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>0.5GB, 1GB, 2GB - Available
+     * <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB,
+     * 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+     * </li> <li> <p>Between 4GB and 16GB in 1GB increments - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8GB and 30GB in
+     * 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetMemory() const{ return m_memory; }
 
     /**
      * <p>The amount (in MiB) of memory used by the task. If using the EC2 launch type,
-     * this field is optional and any value can be used. If you are using the Fargate
-     * launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code>
-     * parameter:</p> <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values:
-     * 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB
-     * and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2
-     * vCPU)</p> </li> <li> <p>Between 8GB and 30GB in 1GB increments - Available
-     * <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * this field is optional and any value can be used.</p> <note> <p>Task-level CPU
+     * and memory parameters are ignored for Windows containers. We recommend
+     * specifying container-level resources for Windows containers.</p> </note> <p>If
+     * you are using the Fargate launch type, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>0.5GB, 1GB, 2GB - Available
+     * <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB,
+     * 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+     * </li> <li> <p>Between 4GB and 16GB in 1GB increments - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8GB and 30GB in
+     * 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+     * </ul>
      */
     inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
      * <p>The amount (in MiB) of memory used by the task. If using the EC2 launch type,
-     * this field is optional and any value can be used. If you are using the Fargate
-     * launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code>
-     * parameter:</p> <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values:
-     * 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB
-     * and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2
-     * vCPU)</p> </li> <li> <p>Between 8GB and 30GB in 1GB increments - Available
-     * <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * this field is optional and any value can be used.</p> <note> <p>Task-level CPU
+     * and memory parameters are ignored for Windows containers. We recommend
+     * specifying container-level resources for Windows containers.</p> </note> <p>If
+     * you are using the Fargate launch type, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>0.5GB, 1GB, 2GB - Available
+     * <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB,
+     * 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+     * </li> <li> <p>Between 4GB and 16GB in 1GB increments - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8GB and 30GB in
+     * 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+     * </ul>
      */
     inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
 
     /**
      * <p>The amount (in MiB) of memory used by the task. If using the EC2 launch type,
-     * this field is optional and any value can be used. If you are using the Fargate
-     * launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code>
-     * parameter:</p> <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values:
-     * 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB
-     * and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2
-     * vCPU)</p> </li> <li> <p>Between 8GB and 30GB in 1GB increments - Available
-     * <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * this field is optional and any value can be used.</p> <note> <p>Task-level CPU
+     * and memory parameters are ignored for Windows containers. We recommend
+     * specifying container-level resources for Windows containers.</p> </note> <p>If
+     * you are using the Fargate launch type, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>0.5GB, 1GB, 2GB - Available
+     * <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB,
+     * 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+     * </li> <li> <p>Between 4GB and 16GB in 1GB increments - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8GB and 30GB in
+     * 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+     * </ul>
      */
     inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
 
     /**
      * <p>The amount (in MiB) of memory used by the task. If using the EC2 launch type,
-     * this field is optional and any value can be used. If you are using the Fargate
-     * launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code>
-     * parameter:</p> <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values:
-     * 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB
-     * and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2
-     * vCPU)</p> </li> <li> <p>Between 8GB and 30GB in 1GB increments - Available
-     * <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * this field is optional and any value can be used.</p> <note> <p>Task-level CPU
+     * and memory parameters are ignored for Windows containers. We recommend
+     * specifying container-level resources for Windows containers.</p> </note> <p>If
+     * you are using the Fargate launch type, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>0.5GB, 1GB, 2GB - Available
+     * <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB,
+     * 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+     * </li> <li> <p>Between 4GB and 16GB in 1GB increments - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8GB and 30GB in
+     * 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+     * </ul>
      */
     inline RegisterTaskDefinitionRequest& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
 
     /**
      * <p>The amount (in MiB) of memory used by the task. If using the EC2 launch type,
-     * this field is optional and any value can be used. If you are using the Fargate
-     * launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code>
-     * parameter:</p> <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values:
-     * 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB
-     * and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2
-     * vCPU)</p> </li> <li> <p>Between 8GB and 30GB in 1GB increments - Available
-     * <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * this field is optional and any value can be used.</p> <note> <p>Task-level CPU
+     * and memory parameters are ignored for Windows containers. We recommend
+     * specifying container-level resources for Windows containers.</p> </note> <p>If
+     * you are using the Fargate launch type, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>0.5GB, 1GB, 2GB - Available
+     * <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB,
+     * 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+     * </li> <li> <p>Between 4GB and 16GB in 1GB increments - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8GB and 30GB in
+     * 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+     * </ul>
      */
     inline RegisterTaskDefinitionRequest& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
 
     /**
      * <p>The amount (in MiB) of memory used by the task. If using the EC2 launch type,
-     * this field is optional and any value can be used. If you are using the Fargate
-     * launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code>
-     * parameter:</p> <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values:
-     * 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB
-     * and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2
-     * vCPU)</p> </li> <li> <p>Between 8GB and 30GB in 1GB increments - Available
-     * <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * this field is optional and any value can be used.</p> <note> <p>Task-level CPU
+     * and memory parameters are ignored for Windows containers. We recommend
+     * specifying container-level resources for Windows containers.</p> </note> <p>If
+     * you are using the Fargate launch type, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>0.5GB, 1GB, 2GB - Available
+     * <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB,
+     * 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+     * </li> <li> <p>Between 4GB and 16GB in 1GB increments - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8GB and 30GB in
+     * 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+     * </ul>
      */
     inline RegisterTaskDefinitionRequest& WithMemory(const char* value) { SetMemory(value); return *this;}
 
